@@ -8,7 +8,7 @@ public abstract class Entity : MonoBehaviour
     public float speed = 1;
     protected Vector3 targetPos;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         targetPos = transform.position;
     }
@@ -27,13 +27,5 @@ public abstract class Entity : MonoBehaviour
     }
 
 
-    protected void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Chunk"))
-        {
-            print("OnTrigger Chunk!");
-            //获取方向
-            
-        }
-    }
+
 }

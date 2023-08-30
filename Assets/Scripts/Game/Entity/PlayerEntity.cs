@@ -1,10 +1,21 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerEntity : Entity
 {
-    bool locker = false;
+    //Shader : sequence of frames animation
+    public Sprite[] key_frames;
+    public int frame_per_second = 12;
     float last_x_abs, last_y_abs;
     Vector3 last_dir;
+    Material m_material;
+    BAnimation m_animation;
+    protected override void Awake()
+    {
+        base.Awake();
+        m_material = GetComponent<Image>().material;
+        m_animation = new BAnimation(GetComponent<Image>(), key_frames, frame_per_second);
+    }
+
     protected void GetCommand()
     {
         //获取移动的指令
@@ -40,14 +51,21 @@ public class PlayerEntity : Entity
         last_x_abs = x_abs;
         last_y_abs = y_abs;
         last_dir = dir;
-        if (dir == Vector3.zero) return;
+        if (dir == Vector3.zero)
+        {
+            m_animation.DoPause();
+            return;
+        }
         targetPos = transform.position + dir * speed;
         transform.rotation = Quaternion.FromToRotation(Vector3.up, dir);
+        //播放移动动画
+        m_animation.DoPlay();
     }
 
     private void Update()
     {
         GetCommand();
+        m_animation.DoUpdate(Time.deltaTime);
     }
-   
+
 }
