@@ -1,9 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using System;
-using System.Reflection;
+using BEBE.Framework.Managers;
+using BEBE.Framework.Utils;
 /// <summary>
 /// 游戏入口
 /// </summary>
@@ -12,6 +11,7 @@ public class GameLaucher : SingletonGameobject<GameLaucher>
     public class MgrsContainer : Singleton<MgrsContainer>
     {
         protected List<IMgr> mgrs = new List<IMgr>();
+        public List<IMgr> AllMgrs => mgrs;
         public T GetMgr<T>() where T : IMgr
         {
             return (T)mgrs.Where(x => x is T).Single();
@@ -27,20 +27,35 @@ public class GameLaucher : SingletonGameobject<GameLaucher>
         }
     }
 
-    public MgrsContainer Container;
+    private MgrsContainer container;
+    public MgrsContainer Container => container;
 
     private void Awake()
     {
-        Container = GameLaucher.MgrsContainer.Instance;
+        container = GameLaucher.MgrsContainer.Instance;
         // 加载管理器
-        Container.AddMgr<SrcMgr>()?.Start();
-        Container.AddMgr<UIMgr>()?.Start();
+        Container.AddMgr<DispatchMgr>()?.Awake();
+        Container.AddMgr<SrcMgr>()?.Awake();
+        Container.AddMgr<UIMgr>()?.Awake();
+        Container.AddMgr<NetMgr>()?.Awake();
     }
 
     void Start()
     {
+        foreach (var mgr in Container.AllMgrs)
+        {
+            mgr?.Start();
+        }
+
         // 启动游戏
         new Game().EnterGame();
     }
 
+    private void OnDestroy()
+    {
+        foreach (var mgr in Container.AllMgrs)
+        {
+            mgr?.OnDestroy();
+        }
+    }
 }

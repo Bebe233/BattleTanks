@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using BEBE.Framework.Managers;
+using BEBE.Framework.Utils;
 using UnityEngine;
 using UnityEngine.WSA;
 
@@ -20,7 +22,7 @@ public class Game : Singleton<Game>
     protected SrcMgr srcMgr => GameLaucher.Instance.Container.GetMgr<SrcMgr>();
     protected void LoadSceneStartGame()
     {
-        uiMgr.LoadCanvasUI<GameStartUIView>();
+        // uiMgr.LoadCanvasUI<GameStartUIView>();
     }
 
     public void LoadSceneLevel(int selectionIndex)

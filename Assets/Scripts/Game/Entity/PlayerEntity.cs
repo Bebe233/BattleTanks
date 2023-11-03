@@ -1,3 +1,4 @@
+using BEBE.Framework.Component;
 using UnityEngine;
 using UnityEngine.UI;
 public class PlayerEntity : Entity

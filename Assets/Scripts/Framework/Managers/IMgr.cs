@@ -1,16 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using Bebe.Framework.Interface;
 using UnityEngine;
-
-public abstract class IMgr
+namespace BEBE.Framework.Managers
 {
-    public virtual void Start()
+    public abstract class IMgr : ILifeCycle
     {
+        public virtual void Awake()
+        {
+        }
+        
+        public virtual void Start()
+        {
 
+        }
+
+        public virtual void Update()
+        {
+
+        }
+
+        public virtual void OnDestroy()
+        {
+        }
+        
     }
 
-    public virtual void Update()
-    {
-
-    }
 }

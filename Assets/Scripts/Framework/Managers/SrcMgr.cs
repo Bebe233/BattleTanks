@@ -4,18 +4,25 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-public class SrcMgr : IMgr
+namespace BEBE.Framework.Managers
 {
-    const string src_directory = "Assets/AssetsPackage/prefabs";
-    public GameObject GetPrefabAsset(string path)
+    //资源加载类
+    //在EditorMode下通过AssetDataBase加载
+    //在PlatformMode下通过AssetBundle加载
+    public class SrcMgr : IMgr
     {
-        string url = Path.Combine(src_directory, path + ".prefab");
-        Debug.Log($"load path : {url} ");
-        GameObject res = AssetDatabase.LoadAssetAtPath<GameObject>(url);
-        if (res == null)
+        const string src_directory = "Assets/AssetsPackage/prefabs";
+        public GameObject GetPrefabAsset(string path)
         {
-            Debug.LogError("failed to get prefab asset!");
+            string url = Path.Combine(src_directory, path + ".prefab");
+            Debug.Log($"load path : {url} ");
+            GameObject res = AssetDatabase.LoadAssetAtPath<GameObject>(url);
+            if (res == null)
+            {
+                Debug.LogError("failed to get prefab asset!");
+            }
+            return res;
         }
-        return res;
     }
+
 }

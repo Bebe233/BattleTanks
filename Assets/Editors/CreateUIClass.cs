@@ -7,77 +7,80 @@ using UnityEditor.Build.Content;
 using TMPro;
 using System.Threading;
 
-public class CreateUIClass
+namespace BEBE.Framework.Editor
 {
-    [MenuItem("Utils/UI/CreateUIClass")]
-    public static void OnClickToCreateUIClass()
+    public class CreateUIClass
     {
-        Debug.Log("OnClickToCreateUIClass");
-        GameObject obj = Selection.activeGameObject;
-        if (obj == null) return;
-        Debug.Log($"Selecting name is {obj.name}");
-        //判断选择的对象是不是属于 Layer UI 
-        if (!(obj.layer == 5)) return;
-        Debug.Log($"Selecting obj is in UI layer");
-        string classname = String.Concat(obj.name, "UIView");
-        CreateClassInstance(classname, obj.transform);
-    }
+        [MenuItem("Utils/UI/CreateUIClass")]
+        public static void OnClickToCreateUIClass()
+        {
+            Debug.Log("OnClickToCreateUIClass");
+            GameObject obj = Selection.activeGameObject;
+            if (obj == null) return;
+            Debug.Log($"Selecting name is {obj.name}");
+            //判断选择的对象是不是属于 Layer UI 
+            if (!(obj.layer == 5)) return;
+            Debug.Log($"Selecting obj is in UI layer");
+            string classname = String.Concat(obj.name, "UIView");
+            CreateClassInstance(classname, obj.transform);
+        }
 
-    const string ClassHeaderPattern =
-    @"using UnityEngine;
+        const string ClassHeaderPattern =
+        @"using UnityEngine;
 using UnityEngine.UI;
 [PrefabLocation(""ui/"")]
 public class {0} : UIView {{
 ";
-    const string ClassTrailerPattern = "}\n";
-    static string writepath => Path.Combine(Application.dataPath, "Scripts/Game/UI/");
-    private static void CreateClassInstance(string className, Transform parent)
-    {
-        StringBuilder sb = new StringBuilder();
-        Debug.Log(className);
-        //添加头
-        sb.Append(String.Format(ClassHeaderPattern, className));
-        //添加成员
-        get_children_component(parent, sb);
-        //添加尾
-        sb.Append(ClassTrailerPattern);
-        string url = writepath + className + ".cs";
-        if (!Directory.Exists(writepath))
+        const string ClassTrailerPattern = "}\n";
+        static string writepath => Path.Combine(Application.dataPath, "Scripts/Game/UI/");
+        private static void CreateClassInstance(string className, Transform parent)
         {
-            Directory.CreateDirectory(writepath);
+            StringBuilder sb = new StringBuilder();
+            Debug.Log(className);
+            //添加头
+            sb.Append(String.Format(ClassHeaderPattern, className));
+            //添加成员
+            get_children_component(parent, sb);
+            //添加尾
+            sb.Append(ClassTrailerPattern);
+            string url = writepath + className + ".cs";
+            if (!Directory.Exists(writepath))
+            {
+                Directory.CreateDirectory(writepath);
+            }
+            if (File.Exists(url))
+            {
+                Debug.LogError("文件已经存在，请删除后再试！");
+                return;
+            }
+            File.WriteAllText(url, sb.ToString());
         }
-        if (File.Exists(url))
-        {
-            Debug.LogError("文件已经存在，请删除后再试！");
-            return;
-        }
-        File.WriteAllText(url, sb.ToString());
-    }
 
-    const string memberPattern = @"
+        const string memberPattern = @"
 [Location(""{0}"")]
 public GameObject {1};
 ";
-    private static void get_children_component(Transform parent, StringBuilder sb)
-    {
-        int count = parent.childCount;
-        for (int i = 0; i < count; i++)
+        private static void get_children_component(Transform parent, StringBuilder sb)
         {
-            Transform child = parent.GetChild(i);
-            string hierarchy_location = get_hierarchy_location(child);
-            sb.Append(String.Format(memberPattern, hierarchy_location, child.name));
+            int count = parent.childCount;
+            for (int i = 0; i < count; i++)
+            {
+                Transform child = parent.GetChild(i);
+                string hierarchy_location = get_hierarchy_location(child);
+                sb.Append(String.Format(memberPattern, hierarchy_location, child.name));
+            }
         }
-    }
 
-    private static string get_hierarchy_location(Transform child)
-    {
-        string location = child.name;
-        Transform current = child;
-        while (current.parent != null)
+        private static string get_hierarchy_location(Transform child)
         {
-            location = string.Concat(current.parent.name, "/", location);
-            current = current.parent;
+            string location = child.name;
+            Transform current = child;
+            while (current.parent != null)
+            {
+                location = string.Concat(current.parent.name, "/", location);
+                current = current.parent;
+            }
+            return location;
         }
-        return location;
     }
 }

@@ -3,30 +3,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = false)]
-public class LocationAttribute : Attribute
+namespace BEBE.Framework.Attibute
 {
-    private string path;
-    public string Path => path;
-    public LocationAttribute(string path)
+
+    [AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = false)]
+    public class LocationAttribute : Attribute
     {
-        this.path = path;
+        private string path;
+        public string Path => path;
+        public LocationAttribute(string path)
+        {
+            this.path = path;
+        }
+
+        public GameObject Locate()
+        {
+            return GameObject.Find(path);
+        }
+
     }
 
-    public GameObject Locate()
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
+    public class PrefabLocationAttribute : Attribute
     {
-        return GameObject.Find(path);
+        private string path;
+        public string Path => path;
+        public PrefabLocationAttribute(string path)
+        {
+            this.path = path;
+        }
     }
 
-}
-
-[AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
-public class PrefabLocationAttribute : Attribute
-{
-    private string path;
-    public string Path => path;
-    public PrefabLocationAttribute(string path)
-    {
-        this.path = path;
-    }
 }

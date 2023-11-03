@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BEBE.Framework.Attibute;
+using BEBE.Framework.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
