@@ -1,0 +1,54 @@
+ Frame Sync Test | 2023/11/14 15:23:45 |  Log --> BEBE.Framework.Managers.SrcMgr Added!
+ Frame Sync Test | 2023/11/14 15:23:45 |  Log --> BEBE.Framework.Managers.UIMgr Added!
+ Frame Sync Test | 2023/11/14 15:23:45 |  Log --> BEBE.Framework.Managers.NetMgr Added!
+ Frame Sync Test | 2023/11/14 15:23:45 |  Log --> Enter game
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> SERVER --> new client 0 connected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> SERVER --> new client 1 connected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> SERVER --> new client 2 connected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> SERVER --> new client 3 connected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> SERVER --> new client 4 connected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> SERVER --> new client 5 connected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> SERVER --> new client 6 connected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> SERVER --> new client 7 connected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> SERVER --> new client 8 connected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> SERVER --> new client 9 connected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Log --> EVENT_ON_CONNECTED_SERVER --> Your client id 0 from server
+ Frame Sync Test | 2023/11/14 15:23:45 |  Log --> EVENT_ON_CONNECTED_SERVER --> Your client id 1 from server
+ Frame Sync Test | 2023/11/14 15:23:45 |  Log --> EVENT_ON_CONNECTED_SERVER --> Your client id 4 from server
+ Frame Sync Test | 2023/11/14 15:23:45 |  Log --> EVENT_ON_CONNECTED_SERVER --> Your client id 9 from server
+ Frame Sync Test | 2023/11/14 15:23:45 |  Log --> EVENT_ON_CONNECTED_SERVER --> Your client id 3 from server
+ Frame Sync Test | 2023/11/14 15:23:45 |  Log --> EVENT_ON_CONNECTED_SERVER --> Your client id 2 from server
+ Frame Sync Test | 2023/11/14 15:23:45 |  Log --> EVENT_ON_CONNECTED_SERVER --> Your client id 5 from server
+ Frame Sync Test | 2023/11/14 15:23:45 |  Log --> EVENT_ON_CONNECTED_SERVER --> Your client id 6 from server
+ Frame Sync Test | 2023/11/14 15:23:45 |  Log --> EVENT_ON_CONNECTED_SERVER --> Your client id 7 from server
+ Frame Sync Test | 2023/11/14 15:23:45 |  Log --> EVENT_ON_CONNECTED_SERVER --> Your client id 8 from server
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel connected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel connected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel connected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel connected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel connected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel connected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel connected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel connected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel connected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel connected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/14 15:23:45 |  Warn --> channel disconnected !

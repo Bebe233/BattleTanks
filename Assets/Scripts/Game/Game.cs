@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using BEBE.Framework.Managers;
+using BEBE.Framework.Math.BaseType;
+using BEBE.Framework.Math;
 using BEBE.Framework.Utils;
 using UnityEngine;
-using UnityEngine.WSA;
 
 public class Game : Singleton<Game>
 {
@@ -12,10 +11,10 @@ public class Game : Singleton<Game>
     /// </summary>
     public void EnterGame()
     {
-        Debug.Log("进入游戏");
-
+        BEBE.Framework.Logging.Debug.Log("Enter game");
         //加载开始页面
         LoadSceneStartGame();
+
     }
 
     protected UIMgr uiMgr => GameLaucher.Instance.Container.GetMgr<UIMgr>();
@@ -41,6 +40,6 @@ public class Game : Singleton<Game>
         GameObject map_1 = srcMgr.GetPrefabAsset("maps/map_1");
         GameObject.Instantiate(map_1, GameObject.Find("Canvas").transform);
         //加载角色
-        
+
     }
 }

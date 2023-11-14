@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using Bebe.Framework.Interface;
-using UnityEngine;
+using BEBE.Framework.Interface;
+
 namespace BEBE.Framework.Managers
 {
     public abstract class IMgr : ILifeCycle
