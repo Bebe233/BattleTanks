@@ -1,4 +1,4 @@
-using BEBE.Framework.Service.Net;
+using BEBE.Engine.Service.Net;
 using System.Collections.Generic;
 namespace BEBE.Framework.Managers
 {
@@ -9,12 +9,13 @@ namespace BEBE.Framework.Managers
     {
         private NetService m_netServer;
         private List<NetService> services = new List<NetService>();
+        private const int clients_num = 1;
         public override void Awake()
         {
             m_netServer = new TCPServerService();
             m_netServer.Init("127.0.0.1", 9600);
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < clients_num; i++)
             {
                 var m_netService = new TCPClientService();
                 m_netService.Init("127.0.0.1", 9600);
@@ -25,7 +26,7 @@ namespace BEBE.Framework.Managers
         public override void Start()
         {
             m_netServer?.Connect();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < clients_num; i++)
             {
                 services[i].Connect();
             }
@@ -35,7 +36,7 @@ namespace BEBE.Framework.Managers
         {
             base.Update();
             m_netServer?.DoUpdate();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < clients_num; i++)
             {
                 services[i].DoUpdate();
             }
@@ -44,7 +45,7 @@ namespace BEBE.Framework.Managers
         public override void OnDestroy()
         {
             m_netServer?.Disconnect();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < clients_num; i++)
             {
                 services[i].Disconnect();
             }

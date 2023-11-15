@@ -1,8 +1,9 @@
 using System.IO;
-using BEBE.Framework.Event;
-using BEBE.Framework.Managers;
+using BEBE.Engine.Event;
+using BEBE.Engine.Managers;
+using BEBE.Engine.Service.Net.Msg;
 
-namespace BEBE.Framework.Service.Net
+namespace BEBE.Engine.Service.Net
 {
     public class Packet
     {
@@ -18,52 +19,30 @@ namespace BEBE.Framework.Service.Net
             msgType = (MsgType)buffer.ReadByte();
         }
 
-        public Packet(string msg)
+        public Packet(StringMsg str_msg)
         {
-            int length_body = msg.Length + 1;
-            buffer.WriteInt(length_body);
-            msgType = BEBE.Framework.Service.Net.MsgType.String;
-            buffer.WriteByte(((byte)msgType));
-            buffer.WriteString(msg);
+            str_msg.Serialize(ref buffer);
         }
 
-        public Packet(Event.EventCode eventCode, byte param)
+        public Packet(EventMsg event_msg)
         {
-            int length_body = 4; // | msgType | eventCode | paramType | param |
-            buffer.WriteInt(length_body);
-            msgType = BEBE.Framework.Service.Net.MsgType.EventCode;
-            buffer.WriteByte(((byte)msgType));
-            buffer.WriteByte(((byte)eventCode));
-            buffer.WriteByte(((byte)ParamType.BYTE));
-            buffer.WriteByte(param);
+            event_msg.Serialize(ref buffer);
         }
 
-        public string DecodeString()
+        public StringMsg DecodeString()
         {
-            return System.Text.Encoding.UTF8.GetString(Buffer.ReadBytes());
+            var res = new StringMsg();
+            res.Deserialize(buffer);
+            return res;
         }
 
         public void DecodeEventCode(NetService sender)
         {
+            var res = new EventMsg();
+            res.Deserialize(buffer);
             //EventCode
-            EventCode eCode = (EventCode)Buffer.ReadByte();
-            ParamType pType = (ParamType)Buffer.ReadByte();
-
-            if (Buffer.Length > 7) //有参
-            {
-                switch (pType)
-                {
-                    case ParamType.BYTE:
-                        byte param = Buffer.ReadByte();
-                        Dispatchor.Dispatch(sender, eCode, param);
-                        break;
-                }
-            }
-            else
-            {
-                Dispatchor.Dispatch(sender, eCode, null);
-            }
+            EventCode eCode = res.EventCode;
+            Dispatchor.Dispatch(sender, eCode, res);
         }
     }
-
 }

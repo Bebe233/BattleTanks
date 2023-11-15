@@ -1,11 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BEBE.Framework.Math.BaseType;
-using BEBE.Framework.Math.LUT;
+using BEBE.Engine.Math.BaseType;
+using BEBE.Engine.Math.LUT;
 
-namespace BEBE.Framework.Math
+namespace BEBE.Engine.Math
 {
     public static class HashCodeExtension
     {

@@ -1,15 +1,13 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using BEBE.Framework.UI;
 using BEBE.Framework.Attibute;
 
 namespace BEBE.Framework.Managers
-{   
+{
     //UI管理类
     public class UIMgr : IMgr
     {

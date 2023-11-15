@@ -1,9 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace BEBE.Framework.Logging
+namespace BEBE.Engine.Logging
 {
     public class LogEventArgs : EventArgs
     {

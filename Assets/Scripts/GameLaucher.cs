@@ -1,9 +1,7 @@
 using System.Collections.Generic;
-using UnityEngine;
 using System.Linq;
 using BEBE.Framework.Managers;
 using BEBE.Framework.Utils;
-using BEBE.Framework.Logging;
 /// <summary>
 /// 游戏入口
 /// </summary>
@@ -23,7 +21,7 @@ public class GameLaucher : SingletonGameobject<GameLaucher>
             if (mgrs.Any(x => x.GetType() is T)) return default(T);
             T mgr = new T();
             mgrs.Add(mgr);
-            BEBE.Framework.Logging.Debug.Log($"{mgr.GetType().ToString()} Added!");
+            BEBE.Engine.Logging.Debug.Log($"{mgr.GetType().ToString()} Added!");
             return mgr;
         }
     }
@@ -34,8 +32,8 @@ public class GameLaucher : SingletonGameobject<GameLaucher>
     private void Awake()
     {
         container = GameLaucher.MgrsContainer.Instance;
-        BEBE.Framework.Logging.Debug.prefix = " Frame Sync Test | " + System.DateTime.Now + " | ";
-        BEBE.Framework.Logging.Debug.TraceModeOn();
+        BEBE.Engine.Logging.Debug.prefix = " Frame Sync Test | " + System.DateTime.Now + " | ";
+        BEBE.Engine.Logging.Debug.TraceModeOn();
         // 加载管理器
         Container.AddMgr<SrcMgr>()?.Awake();
         Container.AddMgr<UIMgr>()?.Awake();
@@ -68,6 +66,6 @@ public class GameLaucher : SingletonGameobject<GameLaucher>
             mgr?.OnDestroy();
         }
 
-        BEBE.Framework.Logging.Debug.FlushTrace();
+        BEBE.Engine.Logging.Debug.FlushTrace();
     }
 }

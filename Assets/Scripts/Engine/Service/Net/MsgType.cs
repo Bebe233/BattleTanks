@@ -1,10 +1,9 @@
-namespace BEBE.Framework.Service.Net
+namespace BEBE.Engine.Service.Net
 {
     public enum MsgType
     {
         None,
         EventCode,
         String,
-        Json
     }
 }

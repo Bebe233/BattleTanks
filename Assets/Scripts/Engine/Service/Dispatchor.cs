@@ -1,10 +1,10 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
-using BEBE.Framework.Event;
-namespace BEBE.Framework.Managers
+using BEBE.Engine.Event;
+
+namespace BEBE.Engine.Managers
 {
     delegate void EventHandler(object param);
     //消息分发管理类

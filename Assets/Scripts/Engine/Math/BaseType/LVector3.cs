@@ -1,9 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace BEBE.Framework.Math.BaseType
+namespace BEBE.Engine.Math.BaseType
 {
     ///<summary>
     ///定点数三维向量

@@ -2,9 +2,11 @@ using System.Collections.Concurrent;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
-using BEBE.Framework.Event;
+using BEBE.Engine.Event;
+using BEBE.Engine.Service.Net.Msg;
+using BEBE.Engine.Service.Net.Utils;
 
-namespace BEBE.Framework.Service.Net
+namespace BEBE.Engine.Service.Net
 {
     public abstract class NetService : BaseService
     {
@@ -27,7 +29,7 @@ namespace BEBE.Framework.Service.Net
 
     public class TCPClientService : NetService
     {
-        byte id;
+        int id;
         private Channel m_channel;
         public override void Init(string ip_address, int port)
         {
@@ -44,7 +46,7 @@ namespace BEBE.Framework.Service.Net
         public override void Disconnect()
         {
             //向服务端发送断开通知
-            m_channel?.Send(new Packet(EventCode.ON_CLIENT_DISCONNECTED, id));
+            m_channel?.Send(new Packet(new EventMsg(EventCode.ON_CLIENT_DISCONNECTED, id)));
             m_channel?.Dispose();
             m_channel = null;
         }
@@ -54,10 +56,27 @@ namespace BEBE.Framework.Service.Net
             m_channel?.Recv();
         }
 
-        protected void EVENT_ON_CONNECTED_SERVER(object param)
+        private void ping()
         {
-            id = (byte)param;
-            Logging.Debug.Log($"EVENT_ON_CONNECTED_SERVER --> Your client id {id} from server");
+            m_channel?.Send(new Packet(new EventMsg(EventCode.PING, BytesHelpper.long2bytes(System.DateTime.Now.ToBinary()), id)));
+        }
+        protected void EVENT_ON_SERVER_CONNECTED(object param)
+        {
+            EventMsg msg = (EventMsg)param;
+            id = msg.Id;
+            Logging.Debug.Log($"EVENT_ON_SERVER_CONNECTED --> Your client id is {msg.Id} to server");
+            m_channel?.Send(new Packet(new EventMsg(EventCode.ON_CLIENT_CONNECTED, id)));
+            // ping();
+        }
+
+        protected void EVENT_PING_RPC(object param)
+        {
+            EventMsg msg = (EventMsg)param;
+            byte[] content = msg.Content;
+            long databinary = BytesHelpper.bytes2long(content);
+            System.DateTime date = System.DateTime.FromBinary(databinary);
+            double milliseconds = (System.DateTime.Now - date).TotalMilliseconds;
+            Logging.Debug.Log($"clinet {id} ping is {milliseconds} ms ");
         }
     }
 
@@ -90,11 +109,12 @@ namespace BEBE.Framework.Service.Net
                 while (toggle)
                 {
                     TcpClient accept = await m_listenr.AcceptTcpClientAsync();
-                    Logging.Debug.LogWarning($"SERVER --> new client {id} connected !");
+                    Logging.Debug.LogWarning($"SERVER --> accepting a new client {id} ...");
                     Channel channel = new Channel(this, accept);
                     m_channels.AddOrUpdate(id, channel, (id, channel) => channel);
                     //将id返回给client
-                    channel.Send(new Packet(Event.EventCode.ON_CONNECTED_SERVER, id));
+                    channel.Send(new Packet(new EventMsg(Event.EventCode.ON_SERVER_CONNECTED, id)));
+                    // channel.Send(new Packet(new StringMsg($"Hello client {id}!")));
                     id++;
                 }
             });
@@ -119,14 +139,29 @@ namespace BEBE.Framework.Service.Net
             }
         }
 
+        protected void EVENT_ON_CLIENT_CONNECTED(object param)
+        {
+            EventMsg msg = (EventMsg)param;
+            Logging.Debug.Log($"EVENT_ON_CLIENT_CONNECTED --> client {msg.Id} connected");
+        }
+
         protected void EVENT_ON_CLIENT_DISCONNECTED(object param)
         {
-            byte id = (byte)param;
-            Logging.Debug.Log($"EVENT_ON_CLIENT_DISCONNECTED --> client {id} diconnected from server");
-            if (m_channels.TryRemove(id, out Channel channel))
+            EventMsg msg = (EventMsg)param;
+            Logging.Debug.Log($"EVENT_ON_CLIENT_DISCONNECTED --> client {msg.Id} diconnected");
+            if (m_channels.TryRemove(msg.Id, out Channel channel))
             {
                 channel.Dispose();
                 channel = null;
+            }
+        }
+
+        protected void EVENT_PING(object param)
+        {
+            EventMsg msg = (EventMsg)param;
+            if (m_channels.TryGetValue(msg.Id, out Channel channel))
+            {
+                channel.Send(new Packet(new EventMsg(EventCode.PING_RPC, msg.Content, -1)));
             }
         }
     }

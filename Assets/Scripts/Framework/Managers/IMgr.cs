@@ -1,4 +1,4 @@
-using BEBE.Framework.Interface;
+using BEBE.Engine.Interface;
 
 namespace BEBE.Framework.Managers
 {

@@ -1,10 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BEBE.Framework.Math.BaseType;
+using BEBE.Engine.Math.BaseType;
 
-namespace BEBE.Framework.Math.LUT
+namespace BEBE.Engine.Math.LUT
 {
     public static class LUTSinCos
     {

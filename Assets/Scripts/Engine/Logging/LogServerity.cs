@@ -1,6 +1,6 @@
 using System;
 
-namespace BEBE.Framework.Logging
+namespace BEBE.Engine.Logging
 {
     [Flags]
     public enum LogServerity

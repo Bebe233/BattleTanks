@@ -10,12 +10,12 @@ namespace BEBE.Framework.Editor
     public class CreateEventCode
     {
         const string ClassHeaderPattern =
-               @"namespace BEBE.Framework.Event
+               @"namespace BEBE.Engine.Event
 {
     public enum EventCode
     {
 ";
-        static string writepath => Path.Combine(Application.dataPath, "Scripts/Framework/Event/");
+        static string writepath => Path.Combine(Application.dataPath, "Scripts/Engine/Service/Event/");
         [MenuItem("Utils/Event/CreateEventCode")]
         public static void OnClickToCreateEventCode()
         {

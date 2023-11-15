@@ -2,11 +2,10 @@ using System;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
-using static BEBE.Framework.Logging.Debug;
+using static BEBE.Engine.Logging.Debug;
 using System.IO;
-using System.Threading;
 
-namespace BEBE.Framework.Service.Net
+namespace BEBE.Engine.Service.Net
 {
     ///网络连接
     public class Channel : IDisposable
@@ -67,9 +66,9 @@ namespace BEBE.Framework.Service.Net
                     packet.DecodeEventCode(sender);
                     break;
                 case MsgType.String:
-                    Log($"RPC MSG --> {packet.DecodeString()}");
+                    var msg = packet.DecodeString();
+                    Log($"RPC MSG -->{msg.Id} {msg.Content}");
                     break;
-                case MsgType.Json: break;
             }
         }
 

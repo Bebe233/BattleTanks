@@ -1,9 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace BEBE.Framework.Math.LUT
+namespace BEBE.Engine.Math.LUT
 {
     public static class LUTAcos
     {

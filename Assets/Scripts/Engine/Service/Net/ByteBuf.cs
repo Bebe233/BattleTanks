@@ -1,11 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using BEBE.Framework.Logging;
 
-namespace BEBE.Framework.Service.Net
+namespace BEBE.Engine.Service.Net
 {
     public class ByteBuf
     {
@@ -52,7 +48,10 @@ namespace BEBE.Framework.Service.Net
         public byte[] ReadBytes()
         {
             int length = Length - srcReadIdx;
-            return ReadBytes(length);
+            if (length > 0)
+                return ReadBytes(length);
+            else
+                return null;
         }
 
         public byte[] ReadBytes(int length)
@@ -74,6 +73,11 @@ namespace BEBE.Framework.Service.Net
             return BitConverter.ToInt32(ReadBytes(4));
         }
 
+        public long ReadLong()
+        {
+            return BitConverter.ToInt64(ReadBytes(8));
+        }
+
         public void WriteBytes(BinaryReader reader)
         {
             int index = reader.Read(data, 0, sizeof(int));
@@ -88,7 +92,8 @@ namespace BEBE.Framework.Service.Net
 
         public void WriteBytes(byte[] src)
         {
-            WriteBytes(src, 0, src.Length);
+            if (src != null)
+                WriteBytes(src, 0, src.Length);
         }
 
         public void WriteBytes(byte[] src, int srcIdx, int length)
@@ -119,6 +124,12 @@ namespace BEBE.Framework.Service.Net
         {
             resizeIfNeeded(sizeof(int));
             WriteBytes(BitConverter.GetBytes(val), 0, sizeof(int));
+        }
+
+        public void WriteLong(long val)
+        {
+            resizeIfNeeded(sizeof(long));
+            WriteBytes(BitConverter.GetBytes(val), 0, sizeof(long));
         }
 
         public void WriteString(string msg)

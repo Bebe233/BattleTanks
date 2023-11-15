@@ -1,6 +1,4 @@
 using BEBE.Framework.Managers;
-using BEBE.Framework.Math.BaseType;
-using BEBE.Framework.Math;
 using BEBE.Framework.Utils;
 using UnityEngine;
 
@@ -11,7 +9,7 @@ public class Game : Singleton<Game>
     /// </summary>
     public void EnterGame()
     {
-        BEBE.Framework.Logging.Debug.Log("Enter game");
+        BEBE.Engine.Logging.Debug.Log("Enter game");
         //加载开始页面
         LoadSceneStartGame();
 

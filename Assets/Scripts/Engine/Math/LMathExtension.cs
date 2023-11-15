@@ -1,6 +1,6 @@
-using BEBE.Framework.Math.BaseType;
+using BEBE.Engine.Math.BaseType;
 
-namespace BEBE.Framework.Math
+namespace BEBE.Engine.Math
 {
     public static partial class LMathExtension
     {

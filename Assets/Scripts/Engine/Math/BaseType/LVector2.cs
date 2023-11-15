@@ -1,6 +1,6 @@
 using System;
 
-namespace BEBE.Framework.Math.BaseType
+namespace BEBE.Engine.Math.BaseType
 {
     ///<summary>
     ///定点数二维向量

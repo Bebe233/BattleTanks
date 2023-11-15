@@ -1,9 +1,8 @@
 using System;
 using System.Text;
 using System.IO;
-using UnityEngine;
 
-namespace BEBE.Framework.Logging
+namespace BEBE.Engine.Logging
 {
     public static class Logger
     {
