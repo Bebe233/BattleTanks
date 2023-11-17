@@ -7,7 +7,7 @@ namespace BEBE.Framework.Managers
         public virtual void Awake()
         {
         }
-        
+
         public virtual void Start()
         {
 
@@ -15,13 +15,17 @@ namespace BEBE.Framework.Managers
 
         public virtual void Update()
         {
-
+           
         }
 
         public virtual void OnDestroy()
         {
         }
-        
+
+        public virtual void DoFixedUpdate()
+        {
+
+        }
     }
 
 }

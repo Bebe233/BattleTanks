@@ -4,10 +4,10 @@ using System.IO;
 
 namespace BEBE.Engine.Logging
 {
-    public static class Logger
+    public static partial class Logger
     {
         public static LogServerity LogServerityLevel = LogServerity.Info | LogServerity.Warn | LogServerity.Error | LogServerity.Exception;
-        public static event EventHandler<LogEventArgs> OnMessage = UnityLogHandler;
+        public static event EventHandler<LogEventArgs> OnMessage;
 
         static StringBuilder track_sb = new StringBuilder();
 
@@ -35,29 +35,6 @@ namespace BEBE.Engine.Logging
             }
         }
 
-        public static void UnityLogHandler(object sender, LogEventArgs args)
-        {
-            switch (args.LogServerity)
-            {
-                case LogServerity.Info:
-                    UnityEngine.Debug.Log(args.Message);
-                    break;
-                case LogServerity.Warn:
-                    UnityEngine.Debug.LogWarning(args.Message);
-                    break;
-                case LogServerity.Error:
-                    UnityEngine.Debug.LogError(args.Message);
-                    break;
-                case LogServerity.Exception:
-                    UnityEngine.Debug.LogException(args.Ex);
-                    break;
-                case LogServerity.Trace:
-                    track_sb.AppendLine(args.Message);
-                    if (track_sb.Length > trace_dump_length)
-                        flushTrace();
-                    break;
-            }
-        }
         public static string TraceSavePath => "./tmp/Dump_1.txt";
         private static int trace_dump_length = 1024 * 128;
         private static Stream file_writer;

@@ -1,6 +1,6 @@
 using System;
 
-namespace BEBE.Engine.Math.BaseType
+namespace BEBE.Engine.Math
 {
     ///<summary>
     ///定点数浮点类型
@@ -11,6 +11,7 @@ namespace BEBE.Engine.Math.BaseType
         public const int Precision = 1000; //精度
         public const int HalfPercision = Precision / 2;
         public const float PrecisionFactor = 0.001f;
+        public const int size = sizeof(int);
         public int val;
 
         public LFloat(int val)

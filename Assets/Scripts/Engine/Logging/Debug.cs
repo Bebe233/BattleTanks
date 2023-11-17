@@ -18,6 +18,11 @@ namespace BEBE.Engine.Logging
             isTraceMode = false;
         }
 
+        public static void SetLogHandler(EventHandler<LogEventArgs> handler)
+        {
+            Logger.OnMessage += handler;
+        }
+
         public static void Log(string format, params object[] args)
         {
             Logger.Info(0, prefix + format, args);

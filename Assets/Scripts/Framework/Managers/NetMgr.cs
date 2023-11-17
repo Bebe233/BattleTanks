@@ -7,48 +7,59 @@ namespace BEBE.Framework.Managers
     //服务端实例化 net_server
     public class NetMgr : IMgr
     {
-        private NetService m_netServer;
-        private List<NetService> services = new List<NetService>();
+        private NetService m_Server;
+        // private List<NetService> services = new List<NetService>();
+        private TCPClientService m_client;
+        public TCPClientService Client => m_client;
         private const int clients_num = 1;
+        private const string ip = "127.0.0.1";
+        private const int port = 9600;
         public override void Awake()
         {
-            m_netServer = new TCPServerService();
-            m_netServer.Init("127.0.0.1", 9600);
+            m_Server = new TCPServerService();
+            m_Server?.Init(ip, port);
 
-            for (int i = 0; i < clients_num; i++)
-            {
-                var m_netService = new TCPClientService();
-                m_netService.Init("127.0.0.1", 9600);
-                services.Add(m_netService);
-            }
+            m_client = new TCPClientService();
+            m_client?.Init(ip, port);
+
+            // for (int i = 0; i < clients_num; i++)
+            // {
+            //     var m_netService = new TCPClientService();
+            //     m_netService.Init(ip, port);
+            //     services.Add(m_netService);
+            // }
         }
 
         public override void Start()
         {
-            m_netServer?.Connect();
-            for (int i = 0; i < clients_num; i++)
-            {
-                services[i].Connect();
-            }
+            m_Server?.Connect();
+            m_client?.Connect();
+            // for (int i = 0; i < clients_num; i++)
+            // {
+            //     services[i].Connect();
+            // }
         }
 
         public override void Update()
         {
-            base.Update();
-            m_netServer?.DoUpdate();
-            for (int i = 0; i < clients_num; i++)
-            {
-                services[i].DoUpdate();
-            }
+            m_Server?.DoUpdate();
+            m_client?.DoUpdate();
+
+            // for (int i = 0; i < clients_num; i++)
+            // {
+            //     services[i].DoUpdate();
+            // }
         }
 
         public override void OnDestroy()
         {
-            m_netServer?.Disconnect();
-            for (int i = 0; i < clients_num; i++)
-            {
-                services[i].Disconnect();
-            }
+            m_Server?.Disconnect();
+            m_client?.Disconnect();
+
+            // for (int i = 0; i < clients_num; i++)
+            // {
+            //     services[i].Disconnect();
+            // }
         }
     }
 

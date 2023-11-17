@@ -23,7 +23,7 @@ namespace BEBE.Framework.Managers
             Type t = typeof(T);
             var prefabLocationAttr = t.GetCustomAttribute<PrefabLocationAttribute>();
             if (prefabLocationAttr == null) return;
-            GameObject temp = GameLaucher.Instance.Container.GetMgr<SrcMgr>().GetPrefabAsset(prefabLocationAttr.Path);
+            GameObject temp = MgrsContainer.GetMgr<SrcMgr>().GetPrefabAsset(prefabLocationAttr.Path);
             var gamestart = MonoBehaviour.Instantiate(temp, GameObject.Find("Canvas").transform);
             gamestart.name = temp.name;
             var cmpt = gamestart.AddComponent<GameStartUIView>();

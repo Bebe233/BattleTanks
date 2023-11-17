@@ -1,28 +1,28 @@
+using BEBE.Engine.Math;
+using BEBE.Framework.Component;
+using BEBE.Framework.Managers;
+using BEBE.Framework.ULMath;
 using UnityEngine;
 
 public abstract class Entity : MonoBehaviour
 {
-    public float speed = 1;
-    protected Vector3 targetPos;
+    public int Id { get; protected set; }
+    public LFloat speed = 1;
+    protected LVector3 targetPos;
+
+    public abstract void ExecuteCmd(BInput binput);
 
     protected virtual void Awake()
     {
-        targetPos = transform.position;
+        targetPos = transform.position.ToLVector3();
     }
+
     //移动
     public void DoMove()
     {
-        Vector3 currentPos = transform.position;
-        currentPos = Vector3.Lerp(currentPos, targetPos, 0.3f);
-        transform.position = currentPos;
-
+        LVector3 currentPos = transform.position.ToLVector3();
+        currentPos = LVector3.Lerp(currentPos, targetPos, 0.3f.ToLFloat());
+        transform.position = currentPos.ToVector3();
     }
-
-    protected virtual void FixedUpdate()
-    {
-        DoMove();
-    }
-
-
 
 }

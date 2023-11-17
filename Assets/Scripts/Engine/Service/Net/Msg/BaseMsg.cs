@@ -1,7 +1,7 @@
 using System;
 using BEBE.Engine.Event;
 using BEBE.Engine.Interface;
-namespace BEBE.Engine.Service.Net.Msg
+namespace BEBE.Engine.Service.Net
 {
     public abstract class BaseMsg
     {

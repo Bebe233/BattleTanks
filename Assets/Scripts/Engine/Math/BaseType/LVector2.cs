@@ -1,6 +1,6 @@
 using System;
 
-namespace BEBE.Engine.Math.BaseType
+namespace BEBE.Engine.Math
 {
     ///<summary>
     ///定点数二维向量
@@ -171,13 +171,13 @@ namespace BEBE.Engine.Math.BaseType
         #endregion
 
         #region const value
-        public static readonly LVector2 Zero = new LVector2(true, 0, 0);
-        public static readonly LVector2 One = new LVector2(true, LFloat.Precision, LFloat.Precision);
-        public static readonly LVector2 Half = new LVector2(true, LFloat.HalfPercision, LFloat.HalfPercision);
-        public static readonly LVector2 Up = new LVector2(true, 0, LFloat.Precision);
-        public static readonly LVector2 Down = new LVector2(true, 0, -LFloat.Precision);
-        public static readonly LVector2 Right = new LVector2(true, LFloat.Precision, 0);
-        public static readonly LVector2 Left = new LVector2(true, -LFloat.Precision, 0);
+        public static readonly LVector2 zero = new LVector2(true, 0, 0);
+        public static readonly LVector2 one = new LVector2(true, LFloat.Precision, LFloat.Precision);
+        public static readonly LVector2 half = new LVector2(true, LFloat.HalfPercision, LFloat.HalfPercision);
+        public static readonly LVector2 up = new LVector2(true, 0, LFloat.Precision);
+        public static readonly LVector2 down = new LVector2(true, 0, -LFloat.Precision);
+        public static readonly LVector2 right = new LVector2(true, LFloat.Precision, 0);
+        public static readonly LVector2 left = new LVector2(true, -LFloat.Precision, 0);
 
         #endregion
 

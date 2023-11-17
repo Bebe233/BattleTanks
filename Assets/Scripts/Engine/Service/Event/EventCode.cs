@@ -7,6 +7,7 @@ namespace BEBE.Engine.Event
         ON_CLIENT_CONNECTED,
         ON_CLIENT_DISCONNECTED,
         PING,
+        ON_RECV_INPUT,
         ENUM_COUNT
     }
 }

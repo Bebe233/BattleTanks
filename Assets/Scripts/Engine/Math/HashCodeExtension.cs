@@ -1,4 +1,3 @@
-using BEBE.Engine.Math.BaseType;
 using BEBE.Engine.Math.LUT;
 
 namespace BEBE.Engine.Math

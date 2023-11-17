@@ -1,7 +1,7 @@
 using System.IO;
 using BEBE.Engine.Event;
 using BEBE.Engine.Managers;
-using BEBE.Engine.Service.Net.Msg;
+using BEBE.Engine.Service.Net;
 
 namespace BEBE.Engine.Service.Net
 {

@@ -1,84 +1,304 @@
- Frame Sync Test | 2023/11/15 14:48:40 |  Log --> BEBE.Framework.Managers.SrcMgr Added!
- Frame Sync Test | 2023/11/15 14:48:40 |  Log --> BEBE.Framework.Managers.UIMgr Added!
- Frame Sync Test | 2023/11/15 14:48:40 |  Log --> BEBE.Framework.Managers.NetMgr Added!
- Frame Sync Test | 2023/11/15 14:48:40 |  Log --> Enter game
- Frame Sync Test | 2023/11/15 14:48:40 |  Warn --> SERVER --> accepting a new client 0 ...
- Frame Sync Test | 2023/11/15 14:48:40 |  Warn --> SERVER --> accepting a new client 1 ...
- Frame Sync Test | 2023/11/15 14:48:40 |  Warn --> SERVER --> accepting a new client 2 ...
- Frame Sync Test | 2023/11/15 14:48:40 |  Warn --> SERVER --> accepting a new client 3 ...
- Frame Sync Test | 2023/11/15 14:48:40 |  Log --> EVENT_ON_SERVER_CONNECTED --> Your client id is 0 to server
- Frame Sync Test | 2023/11/15 14:48:40 |  Log --> EVENT_ON_SERVER_CONNECTED --> Your client id is 1 to server
- Frame Sync Test | 2023/11/15 14:48:40 |  Log --> EVENT_ON_SERVER_CONNECTED --> Your client id is 3 to server
- Frame Sync Test | 2023/11/15 14:48:40 |  Log --> EVENT_ON_SERVER_CONNECTED --> Your client id is 2 to server
- Frame Sync Test | 2023/11/15 14:48:40 |  Warn --> channel connected !
- Frame Sync Test | 2023/11/15 14:48:40 |  Warn --> channel connected !
- Frame Sync Test | 2023/11/15 14:48:40 |  Warn --> channel connected !
- Frame Sync Test | 2023/11/15 14:48:40 |  Warn --> channel connected !
- Frame Sync Test | 2023/11/15 14:48:40 |  Log --> clinet 0 ping is 10.9993 ms 
- Frame Sync Test | 2023/11/15 14:48:40 |  Log --> clinet 1 ping is 7.9997 ms 
- Frame Sync Test | 2023/11/15 14:48:40 |  Log --> clinet 3 ping is 7.9997 ms 
- Frame Sync Test | 2023/11/15 14:48:40 |  Log --> clinet 2 ping is 7.9997 ms 
- Frame Sync Test | 2023/11/15 14:48:40 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:48:40 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:48:40 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:48:40 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:48:40 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:48:40 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:48:40 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:48:40 |  Warn --> channel disconnected !
-ted !
-rver
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel connected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel connected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel connected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel connected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel connected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel connected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel connected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel connected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel connected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel connected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Log --> clinet 2 ping is 11.9992 ms 
- Frame Sync Test | 2023/11/15 14:46:53 |  Log --> clinet 3 ping is 8.9998 ms 
- Frame Sync Test | 2023/11/15 14:46:53 |  Log --> clinet 6 ping is 8.9998 ms 
- Frame Sync Test | 2023/11/15 14:46:53 |  Log --> clinet 0 ping is 7.9998 ms 
- Frame Sync Test | 2023/11/15 14:46:53 |  Log --> clinet 1 ping is 7.9998 ms 
- Frame Sync Test | 2023/11/15 14:46:53 |  Log --> clinet 4 ping is 7.9998 ms 
- Frame Sync Test | 2023/11/15 14:46:53 |  Log --> clinet 5 ping is 7.9998 ms 
- Frame Sync Test | 2023/11/15 14:46:53 |  Log --> clinet 9 ping is 7.9998 ms 
- Frame Sync Test | 2023/11/15 14:46:53 |  Log --> clinet 8 ping is 8.9998 ms 
- Frame Sync Test | 2023/11/15 14:46:53 |  Log --> clinet 7 ping is 8.9998 ms 
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:46:53 |  Warn --> channel disconnected !
-Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:34:02 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:34:02 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:34:02 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:34:02 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:34:02 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:34:02 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:34:02 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:34:02 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:34:02 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:34:02 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:34:02 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:34:02 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/11/15 14:34:02 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/17 16:00:49 |  Log --> BEBE.Framework.Managers.SrcMgr Added!
+ Frame Sync Test | 2023/11/17 16:00:49 |  Log --> BEBE.Framework.Managers.UIMgr Added!
+ Frame Sync Test | 2023/11/17 16:00:49 |  Log --> BEBE.Framework.Managers.NetMgr Added!
+ Frame Sync Test | 2023/11/17 16:00:49 |  Log --> Enter game
+ Frame Sync Test | 2023/11/17 16:00:49 |  Warn --> SERVER --> accepting a new client 0 ...
+ Frame Sync Test | 2023/11/17 16:00:49 |  Warn --> channel connected !
+ Frame Sync Test | 2023/11/17 16:00:49 |  Log --> EVENT_ON_SERVER_CONNECTED --> Your client id is 0 to server
+ Frame Sync Test | 2023/11/17 16:00:49 |  Log --> EVENT_ON_CLIENT_CONNECTED --> client 0 connected
+ Frame Sync Test | 2023/11/17 16:00:49 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/17 16:00:49 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 2
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 3
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 4
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 5
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 6
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 7
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 8
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 9
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 10
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 11
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 12
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 13
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 14
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 15
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 16
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 17
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 18
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 19
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 20
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 21
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 22
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 23
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 24
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 25
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 26
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 27
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 28
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 29
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 30
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 31
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 32
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 33
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 34
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 35
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 36
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 37
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 38
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 39
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 40
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 41
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 42
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 43
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 44
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 45
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 46
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 47
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 48
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 49
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 50
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 51
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 52
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 53
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 54
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 55
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 56
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 57
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 58
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 59
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 60
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 61
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 62
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 63
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 64
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 65
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 66
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 67
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 68
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 69
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 70
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 71
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 72
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 73
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 74
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 75
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 76
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 77
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 78
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 79
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 80
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 81
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 82
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 83
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 84
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 85
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 86
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 87
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 88
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 89
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 90
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 91
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 92
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 93
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 94
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 95
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 96
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 97
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 98
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 99
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 100
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 101
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 102
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 103
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 104
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 105
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 106
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 107
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 108
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 109
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 110
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 111
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 112
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 113
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 114
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 115
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 116
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 117
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 118
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 119
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 120
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 121
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 122
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 123
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 124
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 125
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 126
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 127
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 128
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 129
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 130
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 131
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 132
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 133
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 134
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 135
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 136
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 137
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 138
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 139
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 140
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 141
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 142
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 143
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 144
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 145
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 146
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 147
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 148
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 149
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 150
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 151
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 152
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 153
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 154
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 155
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 156
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 157
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 158
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 159
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 160
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 161
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 162
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 163
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 164
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 165
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 166
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 167
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 168
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 169
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 170
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 171
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 172
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 173
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 174
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 175
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 176
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 177
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 178
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 179
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 180
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 181
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 182
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 183
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 184
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 185
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 186
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 187
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 188
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 189
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 190
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 191
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 192
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 193
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 194
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 195
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 196
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 197
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 198
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 199
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 200
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 201
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 202
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 203
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 204
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 205
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 206
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 207
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 208
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 209
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 210
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 211
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 212
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 213
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 214
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 215
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 216
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 217
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 218
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 219
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 220
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 221
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 222
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 223
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 224
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 225
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 226
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 227
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 228
+ Frame Sync Test | 2023/11/17 16:00:27 |  Log --> Frame 229
+ Frame Sync Test | 2023/11/17 16:00:27 |  Warn --> channel disconnected !
+ Frame Sync Test | 2023/11/17 16:00:27 |  Warn --> channel disconnected !
+st | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 5759.2904 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 5789.2917 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 5819.2918 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 5864.2916 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 5895.2926 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 5926.2901 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 5958.2907 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 5993.2707 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6034.2532 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6063.2513 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6093.2517 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6138.2517 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6169.2525 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6200.2526 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6231.6855 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6261.6887 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6292.6887 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6323.6891 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6355.6897 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6386.6888 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6417.6889 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6462.2403 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6493.7743 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6524.7742 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6556.7743 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6587.7742 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6618.7741 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6650.774 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6681.7736 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6712.7739 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6757.7739 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6787.7735 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6819.7734 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6850.7736 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6880.7743 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6911.7743 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6942.7736 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 6974.7736 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7005.7735 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7036.31 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7080.3099 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7111.3099 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7143.3099 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7174.264 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7206.2638 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7237.2633 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7269.2637 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7304.2662 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7331.2639 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7375.2636 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7406.2636 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7438.2635 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7469.3604 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7501.3609 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7532.3608 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7564.3607 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7595.3605 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7625.3598 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7655.8154 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7686.8154 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7730.8202 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7761.8202 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Log --> clinet 2 ping is 7791.8203 ms 
+ Frame Sync Test | 2023/11/16 9:30:58 |  Warn --> channel disconnected !

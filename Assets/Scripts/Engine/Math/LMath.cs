@@ -1,4 +1,3 @@
-using BEBE.Engine.Math.BaseType;
 using BEBE.Engine.Math.LUT;
 
 namespace BEBE.Engine.Math
@@ -78,6 +77,19 @@ namespace BEBE.Engine.Math
         public static LFloat Sqr(LFloat a)
         {
             return a * a;
+        }
+
+        public static int Clamp(int a, int min, int max)
+        {
+            if (min > max)
+            {
+                int temp = min;
+                min = max;
+                max = temp;
+            }
+            if (a < min) return min;
+            if (a > max) return max;
+            return a;
         }
 
         public static LFloat Clamp(LFloat a, LFloat min, LFloat max)
@@ -255,14 +267,14 @@ namespace BEBE.Engine.Math
         public static LFloat Acos(LFloat val)
         {
             int num = (int)(val.val * (long)LUTAcos.HALF_COUNT / LFloat.Precision) + LUTAcos.HALF_COUNT;
-            num = UnityEngine.Mathf.Clamp(num, 0, LUTAcos.COUNT);
+            num = Clamp(num, 0, LUTAcos.COUNT);
             return new LFloat(true, (long)LUTAcos.table[num] / 10);
         }
 
         public static LFloat Asin(LFloat val)
         {
             int num = (int)(val.val * (long)LUTAsin.HALF_COUNT / LFloat.Precision) + LUTAsin.HALF_COUNT;
-            num = UnityEngine.Mathf.Clamp(num, 0, LUTAsin.HALF_COUNT);
+            num = Clamp(num, 0, LUTAsin.HALF_COUNT);
             return new LFloat(true, (long)LUTAsin.table[num] / 10);
         }
 

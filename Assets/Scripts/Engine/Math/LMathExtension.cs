@@ -1,5 +1,3 @@
-using BEBE.Engine.Math.BaseType;
-
 namespace BEBE.Engine.Math
 {
     public static partial class LMathExtension

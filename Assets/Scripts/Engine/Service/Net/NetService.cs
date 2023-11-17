@@ -3,19 +3,24 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using BEBE.Engine.Event;
-using BEBE.Engine.Service.Net.Msg;
+using BEBE.Engine.Service.Net;
 using BEBE.Engine.Service.Net.Utils;
 
 namespace BEBE.Engine.Service.Net
 {
     public abstract class NetService : BaseService
     {
-        protected string ip_address;
-        protected int port;
+        protected string ip_address = "127.0.0.1";
+        protected int port = 9600;
+        protected int id = -1;
+        public int Id => id;
+        public NetService()
+        {
+            register_events();
+        }
 
         public virtual void Init(string ip_address, int port)
         {
-            register_events();
             this.ip_address = ip_address;
             this.port = port;
         }
@@ -25,11 +30,12 @@ namespace BEBE.Engine.Service.Net
         public abstract void Disconnect();
 
         public abstract void DoUpdate();
+        public abstract void Send(Packet packet);
     }
 
     public class TCPClientService : NetService
     {
-        int id;
+
         private Channel m_channel;
         public override void Init(string ip_address, int port)
         {
@@ -50,16 +56,17 @@ namespace BEBE.Engine.Service.Net
             m_channel?.Dispose();
             m_channel = null;
         }
+        public override void Send(Packet packet)
+        {
+            m_channel?.Send(packet);
+        }
 
         public override void DoUpdate()
         {
             m_channel?.Recv();
         }
 
-        private void ping()
-        {
-            m_channel?.Send(new Packet(new EventMsg(EventCode.PING, BytesHelpper.long2bytes(System.DateTime.Now.ToBinary()), id)));
-        }
+
         protected void EVENT_ON_SERVER_CONNECTED(object param)
         {
             EventMsg msg = (EventMsg)param;
@@ -67,6 +74,11 @@ namespace BEBE.Engine.Service.Net
             Logging.Debug.Log($"EVENT_ON_SERVER_CONNECTED --> Your client id is {msg.Id} to server");
             m_channel?.Send(new Packet(new EventMsg(EventCode.ON_CLIENT_CONNECTED, id)));
             // ping();
+        }
+
+        private void ping()
+        {
+            m_channel?.Send(new Packet(new EventMsg(EventCode.PING, BytesHelpper.long2bytes(System.DateTime.Now.ToBinary()), id)));
         }
 
         protected void EVENT_PING_RPC(object param)
@@ -78,6 +90,8 @@ namespace BEBE.Engine.Service.Net
             double milliseconds = (System.DateTime.Now - date).TotalMilliseconds;
             Logging.Debug.Log($"clinet {id} ping is {milliseconds} ms ");
         }
+
+
     }
 
     public class TCPServerService : NetService
@@ -138,7 +152,13 @@ namespace BEBE.Engine.Service.Net
                 channel.Recv();
             }
         }
-
+        public override void Send(Packet packet)
+        {
+            foreach (var channel in m_channels.Values)
+            {
+                channel.Send(packet);
+            }
+        }
         protected void EVENT_ON_CLIENT_CONNECTED(object param)
         {
             EventMsg msg = (EventMsg)param;
@@ -161,8 +181,9 @@ namespace BEBE.Engine.Service.Net
             EventMsg msg = (EventMsg)param;
             if (m_channels.TryGetValue(msg.Id, out Channel channel))
             {
-                channel.Send(new Packet(new EventMsg(EventCode.PING_RPC, msg.Content, -1)));
+                channel.Send(new Packet(new EventMsg(EventCode.PING_RPC, msg.Content, id)));
             }
         }
+
     }
 }

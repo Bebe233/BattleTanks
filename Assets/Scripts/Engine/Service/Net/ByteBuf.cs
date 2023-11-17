@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using BEBE.Engine.Math;
 
 namespace BEBE.Engine.Service.Net
 {
@@ -78,6 +79,11 @@ namespace BEBE.Engine.Service.Net
             return BitConverter.ToInt64(ReadBytes(8));
         }
 
+        public LFloat ReadLFloat()
+        {
+            return ReadInt().ToLFloat();
+        }
+
         public void WriteBytes(BinaryReader reader)
         {
             int index = reader.Read(data, 0, sizeof(int));
@@ -136,6 +142,12 @@ namespace BEBE.Engine.Service.Net
         {
             resizeIfNeeded(msg.Length);
             WriteBytes(System.Text.Encoding.UTF8.GetBytes(msg));
+        }
+
+        public void WriteLFloat(LFloat val)
+        {
+            resizeIfNeeded(LFloat.size);
+            WriteInt(val.val);
         }
     }
 }

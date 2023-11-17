@@ -1,4 +1,4 @@
-using BEBE.Engine.Math.BaseType;
+using BEBE.Engine.Math;
 
 namespace BEBE.Engine.Math.LUT
 {

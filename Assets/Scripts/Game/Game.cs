@@ -12,14 +12,15 @@ public class Game : Singleton<Game>
         BEBE.Engine.Logging.Debug.Log("Enter game");
         //加载开始页面
         LoadSceneStartGame();
-
     }
 
-    protected UIMgr uiMgr => GameLaucher.Instance.Container.GetMgr<UIMgr>();
-    protected SrcMgr srcMgr => GameLaucher.Instance.Container.GetMgr<SrcMgr>();
+    protected UIMgr uiMgr => MgrsContainer.GetMgr<UIMgr>();
+    protected SrcMgr srcMgr => MgrsContainer.GetMgr<SrcMgr>();
     protected void LoadSceneStartGame()
     {
         // uiMgr.LoadCanvasUI<GameStartUIView>();
+        MgrsContainer.AddMgr<FrameMgr>()?.Awake();
+        MgrsContainer.GetMgr<FrameMgr>().Start();
     }
 
     public void LoadSceneLevel(int selectionIndex)
@@ -38,6 +39,8 @@ public class Game : Singleton<Game>
         GameObject map_1 = srcMgr.GetPrefabAsset("maps/map_1");
         GameObject.Instantiate(map_1, GameObject.Find("Canvas").transform);
         //加载角色
+
+        //开始游戏
 
     }
 }

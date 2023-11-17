@@ -1,6 +1,6 @@
 using System;
 
-namespace BEBE.Engine.Math.BaseType
+namespace BEBE.Engine.Math
 {
     ///<summary>
     ///定点数三维向量
@@ -156,15 +156,15 @@ namespace BEBE.Engine.Math.BaseType
         #endregion
 
         #region const value
-        public static readonly LVector3 Zero = new LVector3(true, 0, 0, 0);
-        public static readonly LVector3 One = new LVector3(true, LFloat.Precision, LFloat.Precision, LFloat.Precision);
-        public static readonly LVector3 Half = new LVector3(true, LFloat.HalfPercision, LFloat.HalfPercision, LFloat.HalfPercision);
-        public static readonly LVector3 Forward = new LVector3(true, 0, 0, LFloat.Precision);
-        public static readonly LVector3 Back = new LVector3(true, 0, 0, -LFloat.Precision);
-        public static readonly LVector3 Up = new LVector3(true, 0, LFloat.Precision, 0);
-        public static readonly LVector3 Down = new LVector3(true, 0, -LFloat.Precision, 0);
-        public static readonly LVector3 Right = new LVector3(true, LFloat.Precision, 0, 0);
-        public static readonly LVector3 Left = new LVector3(true, -LFloat.Precision, 0, 0);
+        public static readonly LVector3 zero = new LVector3(true, 0, 0, 0);
+        public static readonly LVector3 one = new LVector3(true, LFloat.Precision, LFloat.Precision, LFloat.Precision);
+        public static readonly LVector3 half = new LVector3(true, LFloat.HalfPercision, LFloat.HalfPercision, LFloat.HalfPercision);
+        public static readonly LVector3 forward = new LVector3(true, 0, 0, LFloat.Precision);
+        public static readonly LVector3 back = new LVector3(true, 0, 0, -LFloat.Precision);
+        public static readonly LVector3 up = new LVector3(true, 0, LFloat.Precision, 0);
+        public static readonly LVector3 down = new LVector3(true, 0, -LFloat.Precision, 0);
+        public static readonly LVector3 right = new LVector3(true, LFloat.Precision, 0, 0);
+        public static readonly LVector3 left = new LVector3(true, -LFloat.Precision, 0, 0);
         #endregion
 
         #region transform about
