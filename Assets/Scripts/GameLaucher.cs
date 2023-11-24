@@ -27,10 +27,7 @@ public class GameLaucher : SingletonGameobject<GameLaucher>
 
     void Start()
     {
-        foreach (var mgr in MgrsContainer.AllMgrs)
-        {
-            mgr?.Start();
-        }
+        MgrsContainer.Start();
 
         // 启动游戏
         new Game().EnterGame();
@@ -38,12 +35,15 @@ public class GameLaucher : SingletonGameobject<GameLaucher>
 
     private void Update()
     {
-        foreach (var mgr in MgrsContainer.AllMgrs)
+        try
         {
-            mgr?.Update();
+            MgrsContainer.Update();
+            do_fixed_update();
         }
+        catch
+        {
 
-        do_fixed_update();
+        }
     }
 
     private void do_fixed_update()
@@ -52,19 +52,13 @@ public class GameLaucher : SingletonGameobject<GameLaucher>
         if (timer >= InverseFrameRate)
         {
             timer -= InverseFrameRate;
-            foreach (var mgr in MgrsContainer.AllMgrs)
-            {
-                mgr?.DoFixedUpdate();
-            }
+            MgrsContainer.FixedUpdate();
         }
     }
 
     private void OnDestroy()
     {
-        foreach (var mgr in MgrsContainer.AllMgrs)
-        {
-            mgr?.OnDestroy();
-        }
+        MgrsContainer.OnDestroy();
 
         BEBE.Engine.Logging.Debug.FlushTrace();
     }

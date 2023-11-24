@@ -11,14 +11,12 @@ namespace BEBE.Engine.Service.Net
     public class Channel : IDisposable
     {
         private TcpClient m_client = new TcpClient();
-        private NetService sender;
         private string ip;
         private int port;
-        public Channel(NetService sender, string ip_address, int port)
+        public Channel(string ip_address, int port)
         {
             this.ip = ip_address;
             this.port = port;
-            this.sender = sender;
         }
 
         public Channel(NetService sender, TcpClient accpet)
@@ -27,7 +25,6 @@ namespace BEBE.Engine.Service.Net
             var endPoint = accpet.Client.LocalEndPoint as IPEndPoint;
             this.ip = endPoint.Address.ToString();
             this.port = endPoint.Port;
-            this.sender = sender;
         }
 
         public async Task ConnectAsync()
@@ -63,7 +60,8 @@ namespace BEBE.Engine.Service.Net
             switch (packet.MsgType)
             {
                 case MsgType.EventCode:
-                    packet.DecodeEventCode(sender);
+                    // Log($"RPC EVENTCODE");
+                    packet.DecodeEventCode();
                     break;
                 case MsgType.String:
                     var msg = packet.DecodeString();

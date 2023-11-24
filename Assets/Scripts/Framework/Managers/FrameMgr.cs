@@ -6,21 +6,21 @@ namespace BEBE.Framework.Managers
 {
     public class FrameMgr : IMgr
     {
-        private long frame;
-        public long Frame => frame;
+        private int tick;
+        public int Tick => tick;
         private bool toggle = false;
 
         public override void Start()
         {
             toggle = true;
-            frame = 0;
+            tick = 0;
         }
 
-        public override void DoFixedUpdate()
+        public override void FixedUpdate()
         {
             if (toggle)
             {
-                frame++;
+                ++tick;
                 //BEBE.Engine.Logging.Debug.Log($"Frame {frame}");
             }
         }

@@ -1,31 +1,48 @@
-using System.Collections.Generic;
-using BEBE.Framework.Managers;
-using UnityEngine;
+using BEBE.Framework.Service;
+
 namespace BEBE.Framework.Managers
 {
     public class EntityMgr : IMgr
     {
-        List<PlayerEntity> players;
+        protected PlayerEntityService svc_player;
 
         public override void Awake()
         {
-            base.Awake();
-            players = new List<PlayerEntity>();
+            svc_player = new PlayerEntityService();
         }
 
         public override void Start()
         {
-            //Instantiate Entity
-            // step 1 -> load info TODO
-            // step 2 -> load prefab
-            var prefab = MgrsContainer.GetMgr<SrcMgr>().GetPrefabAsset("player_1");
-            // step 3 -> instantiate gameobject
-            var obj = GameObject.Instantiate(prefab);
-            // step 4 -> add entity
-            var entity = obj.AddComponent<PlayerEntity>();
-            // step 5 -> init status TODO
-            // step 6 -> add to list
-            players.Add(entity);
+            CreatePlayer(((byte)MgrsContainer.GetMgr<NetMgr>().Client.Id));
+        }
+
+        public override void FixedUpdate()
+        {
+            svc_player.DoCmd();
+        }
+
+        public override void OnDestroy()
+        {
+            svc_player.DestroyAll();
+        }
+
+        public void CreatePlayer(byte actorId)
+        {
+            svc_player.CreateEntity(actorId, "roles/player/player_1");
+        }
+
+        public bool TryGetPlayer(byte actorId, out Entity player)
+        {
+            if (svc_player.TryGetEntity(actorId, out Entity p))
+            {
+                player = p;
+                return true;
+            }
+            else
+            {
+                player = null;
+                return false;
+            }
         }
     }
 }

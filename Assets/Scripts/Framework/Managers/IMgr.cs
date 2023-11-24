@@ -22,7 +22,7 @@ namespace BEBE.Framework.Managers
         {
         }
 
-        public virtual void DoFixedUpdate()
+        public virtual void FixedUpdate()
         {
 
         }

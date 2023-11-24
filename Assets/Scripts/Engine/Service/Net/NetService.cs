@@ -14,13 +14,9 @@ namespace BEBE.Engine.Service.Net
         protected int port = 9600;
         protected int id = -1;
         public int Id => id;
-        public NetService()
+        public NetService(string ip_address, int port)
         {
             register_events();
-        }
-
-        public virtual void Init(string ip_address, int port)
-        {
             this.ip_address = ip_address;
             this.port = port;
         }
@@ -37,11 +33,10 @@ namespace BEBE.Engine.Service.Net
     {
 
         private Channel m_channel;
-        public override void Init(string ip_address, int port)
-        {
-            base.Init(ip_address, port);
 
-            m_channel = new Channel(this, ip_address, port);
+        public TCPClientService(string ip_address, int port) : base(ip_address, port)
+        {
+            m_channel = new Channel(ip_address, port);
         }
 
         public override async void Connect()
@@ -74,6 +69,7 @@ namespace BEBE.Engine.Service.Net
             Logging.Debug.Log($"EVENT_ON_SERVER_CONNECTED --> Your client id is {msg.Id} to server");
             m_channel?.Send(new Packet(new EventMsg(EventCode.ON_CLIENT_CONNECTED, id)));
             // ping();
+            Game.Instance.LoadSceneStartGame();
         }
 
         private void ping()
@@ -97,9 +93,9 @@ namespace BEBE.Engine.Service.Net
     public class TCPServerService : NetService
     {
         TcpListener m_listenr;
-        public override void Init(string ip_address, int port)
+
+        public TCPServerService(string ip_address, int port) : base(ip_address, port)
         {
-            base.Init(ip_address, port);
             m_listenr = new TcpListener(IPAddress.Parse(ip_address), port);
             m_listenr.Server.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
             m_listenr.Server.NoDelay = true; //关闭 Nagle 算法

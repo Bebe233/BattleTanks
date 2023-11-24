@@ -8,6 +8,8 @@ namespace BEBE.Engine.Interface
 
         void Update();
 
+        void FixedUpdate();
+
         void OnDestroy();
     }
 }

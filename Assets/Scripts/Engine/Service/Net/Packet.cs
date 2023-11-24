@@ -36,13 +36,13 @@ namespace BEBE.Engine.Service.Net
             return res;
         }
 
-        public void DecodeEventCode(NetService sender)
+        public void DecodeEventCode()
         {
             var res = new EventMsg();
             res.Deserialize(buffer);
             //EventCode
             EventCode eCode = res.EventCode;
-            Dispatchor.Dispatch(sender, eCode, res);
+            Dispatchor.Dispatch(null, eCode, res);
         }
     }
 }

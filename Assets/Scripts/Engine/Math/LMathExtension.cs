@@ -12,9 +12,19 @@ namespace BEBE.Engine.Math
             return new LFloat(val);
         }
 
+        public static LFloat ToLFloat(this int val, bool isUseRawValue)
+        {
+            return new LFloat(isUseRawValue, val);
+        }
+
         public static LFloat ToLFloat(this long val)
         {
             return new LFloat(val);
+        }
+
+        public static LFloat ToLFloat(this long val, bool isUseRawValue)
+        {
+            return new LFloat(isUseRawValue, val);
         }
     }
 }

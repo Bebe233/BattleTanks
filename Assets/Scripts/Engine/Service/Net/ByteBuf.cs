@@ -81,7 +81,7 @@ namespace BEBE.Engine.Service.Net
 
         public LFloat ReadLFloat()
         {
-            return ReadInt().ToLFloat();
+            return ReadInt().ToLFloat(true);
         }
 
         public void WriteBytes(BinaryReader reader)

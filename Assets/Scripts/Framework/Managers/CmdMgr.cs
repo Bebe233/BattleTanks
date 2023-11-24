@@ -10,31 +10,23 @@ namespace BEBE.Framework.Managers
     //指令管理类
     public class CmdMgr : IMgr
     {
-        private CmdService m_service;
-        private TCPClientService m_client => MgrsContainer.GetMgr<NetMgr>().Client;
+        private ClientCmdService m_ccmdsvc;
+        private ServerCmdService m_scmdsvc;
+        private NetService m_client => MgrsContainer.GetMgr<NetMgr>().Client;
+        private NetService m_server => MgrsContainer.GetMgr<NetMgr>().Server;
+
         public override void Awake()
         {
-            m_service = new ClientCmdService(m_client);
-            m_binput = new PlayerInput();
+            m_ccmdsvc = new ClientCmdService(m_client);
+            m_scmdsvc = new ServerCmdService(m_server);
         }
 
-        public override void Update()
+        public override void FixedUpdate()
         {
-            get_command();
-            m_service.SendCmd(m_binput);
+            m_ccmdsvc.RecordInput();
         }
 
-        PlayerInput m_binput;
-        public PlayerInput BInput => m_binput;
-        protected void get_command()
-        {
-            //获取移动的指令
-            float x = Input.GetAxisRaw("Horizontal");
-            float y = Input.GetAxisRaw("Vertical");
-            //装载
-            m_binput.x = x.ToLFloat();
-            m_binput.y = y.ToLFloat();
-
-        }
+        public PlayerInputs GetPlayerInputs() => m_ccmdsvc.Inputs;
+       
     }
 }

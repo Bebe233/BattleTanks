@@ -69,7 +69,7 @@ namespace BEBE.Engine.Math
 
         public static bool operator !=(LFloat a, LFloat b)
         {
-            return a.val == b.val;
+            return a.val != b.val;
         }
 
         public static LFloat operator +(LFloat a, LFloat b)

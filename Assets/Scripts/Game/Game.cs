@@ -11,16 +11,21 @@ public class Game : Singleton<Game>
     {
         BEBE.Engine.Logging.Debug.Log("Enter game");
         //加载开始页面
-        LoadSceneStartGame();
+        // LoadSceneStartGame();
     }
 
     protected UIMgr uiMgr => MgrsContainer.GetMgr<UIMgr>();
     protected SrcMgr srcMgr => MgrsContainer.GetMgr<SrcMgr>();
-    protected void LoadSceneStartGame()
+    public void LoadSceneStartGame()
     {
         // uiMgr.LoadCanvasUI<GameStartUIView>();
         MgrsContainer.AddMgr<FrameMgr>()?.Awake();
-        MgrsContainer.GetMgr<FrameMgr>().Start();
+        MgrsContainer.GetMgr<FrameMgr>()?.Start();
+        MgrsContainer.AddMgr<CmdMgr>()?.Awake();
+        MgrsContainer.GetMgr<CmdMgr>()?.Start();
+        MgrsContainer.AddMgr<EntityMgr>()?.Awake();
+        MgrsContainer.GetMgr<EntityMgr>()?.Start();
+
     }
 
     public void LoadSceneLevel(int selectionIndex)

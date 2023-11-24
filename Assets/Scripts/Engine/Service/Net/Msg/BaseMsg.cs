@@ -28,18 +28,20 @@ namespace BEBE.Engine.Service.Net
             length_body = content.Length + sizeof(byte) + sizeof(int);
         }
 
-        public void Serialize(ref ByteBuf buffer)
+        public void Serialize(ref ByteBuf buffer, bool resetWriteIndex = true)
         {
-            buffer.ResetWriteIndex();
+            if (resetWriteIndex)
+                buffer.ResetWriteIndex();
             buffer.WriteInt(length_body);
             buffer.WriteByte(flag);
             buffer.WriteInt(id);
             buffer.WriteString(content);
         }
 
-        public void Deserialize(ByteBuf buffer)
+        public void Deserialize(ByteBuf buffer, bool resetReadIndex = true)
         {
-            buffer.ResetReadIndex();
+            if (resetReadIndex)
+                buffer.ResetReadIndex();
             length_body = buffer.ReadInt();
             flag = buffer.ReadByte();
             id = buffer.ReadInt();
@@ -76,9 +78,10 @@ namespace BEBE.Engine.Service.Net
             }
         }
 
-        public void Serialize(ref ByteBuf buffer)
+        public void Serialize(ref ByteBuf buffer, bool resetWriteIndex = true)
         {
-            buffer.ResetWriteIndex();
+            if (resetWriteIndex)
+                buffer.ResetWriteIndex();
             buffer.WriteInt(length_body);
             buffer.WriteByte(flag);
             buffer.WriteInt(id);
@@ -86,9 +89,10 @@ namespace BEBE.Engine.Service.Net
             buffer.WriteBytes(content);
         }
 
-        public void Deserialize(ByteBuf buffer)
+        public void Deserialize(ByteBuf buffer, bool resetReadIndex = true)
         {
-            buffer.ResetReadIndex();
+            if (resetReadIndex)
+                buffer.ResetReadIndex();
             length_body = buffer.ReadInt();
             flag = buffer.ReadByte();
             id = buffer.ReadInt();

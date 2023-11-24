@@ -1,24 +1,84 @@
 using System.Collections.Generic;
-using System.Linq;
+using System.Collections.Concurrent;
+using System;
+using BEBE.Engine.Interface;
 
 namespace BEBE.Framework.Managers
 {
     public static class MgrsContainer
     {
-        private static List<IMgr> mgrs = new List<IMgr>();
-        public static List<IMgr> AllMgrs => mgrs;
-        public static T GetMgr<T>() where T : IMgr
+        private static ConcurrentDictionary<Type, IMgr> mgrs = new ConcurrentDictionary<Type, IMgr>();
+        private static ConcurrentQueue<IMgr> mgrs_queue = new ConcurrentQueue<IMgr>();
+
+        public static T GetMgr<T>() where T : IMgr, new()
         {
-            return (T)mgrs.Where(x => x is T).Single();
+            if (mgrs.TryGetValue(typeof(T), out IMgr mgr))
+            {
+                return (T)mgr;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public static T AddMgr<T>() where T : IMgr, new()
         {
-            if (mgrs.Any(x => x.GetType() is T)) return default(T);
+            if (mgrs.ContainsKey(typeof(T))) return GetMgr<T>();
             T mgr = new T();
-            mgrs.Add(mgr);
-            BEBE.Engine.Logging.Debug.Log($"{mgr.GetType().ToString()} Added!");
-            return mgr;
+
+            if (mgrs.TryAdd(typeof(T), mgr))
+            {
+                mgrs_queue.Enqueue(mgr);
+                BEBE.Engine.Logging.Debug.Log($"{mgr.GetType().ToString()} added!");
+                return mgr;
+            }
+            else
+            {
+                BEBE.Engine.Logging.Debug.Log($"{mgr.GetType().ToString()} failed to add!");
+                return default(T);
+            }
         }
+
+        public static void Awake()
+        {
+            foreach (var mgr in mgrs_queue)
+            {
+                mgr?.Awake();
+            }
+        }
+
+        public static void Start()
+        {
+            foreach (var mgr in mgrs_queue)
+            {
+                mgr?.Start();
+            }
+        }
+
+        public static void Update()
+        {
+            foreach (var mgr in mgrs_queue)
+            {
+                mgr?.Update();
+            }
+        }
+
+        public static void FixedUpdate()
+        {
+            foreach (var mgr in mgrs_queue)
+            {
+                mgr?.FixedUpdate();
+            }
+        }
+
+        public static void OnDestroy()
+        {
+            foreach (var mgr in mgrs_queue)
+            {
+                mgr?.OnDestroy();
+            }
+        }
+
     }
 }
