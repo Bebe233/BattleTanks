@@ -12,8 +12,7 @@ namespace BEBE.Engine.Service.Net
     {
         protected string ip_address = "127.0.0.1";
         protected int port = 9600;
-        protected int id = -1;
-        public int Id => id;
+
         public NetService(string ip_address, int port)
         {
             register_events();
@@ -31,7 +30,7 @@ namespace BEBE.Engine.Service.Net
 
     public class TCPClientService : NetService
     {
-
+        public int Id => m_channel.id;
         private Channel m_channel;
 
         public TCPClientService(string ip_address, int port) : base(ip_address, port)
@@ -47,7 +46,7 @@ namespace BEBE.Engine.Service.Net
         public override void Disconnect()
         {
             //向服务端发送断开通知
-            m_channel?.Send(new Packet(new EventMsg(EventCode.ON_CLIENT_DISCONNECTED, id)));
+            m_channel?.Send(new Packet(new EventMsg(EventCode.ON_CLIENT_DISCONNECTED, m_channel.id)));
             m_channel?.Dispose();
             m_channel = null;
         }
@@ -65,16 +64,15 @@ namespace BEBE.Engine.Service.Net
         protected void EVENT_ON_SERVER_CONNECTED(object param)
         {
             EventMsg msg = (EventMsg)param;
-            id = msg.Id;
+            m_channel.id = msg.Id;
             Logging.Debug.Log($"EVENT_ON_SERVER_CONNECTED --> Your client id is {msg.Id} to server");
-            m_channel?.Send(new Packet(new EventMsg(EventCode.ON_CLIENT_CONNECTED, id)));
+            m_channel?.Send(new Packet(new EventMsg(EventCode.ON_CLIENT_CONNECTED, msg.Id)));
             // ping();
-            Game.Instance.LoadSceneStartGame();
         }
 
         private void ping()
         {
-            m_channel?.Send(new Packet(new EventMsg(EventCode.PING, BytesHelpper.long2bytes(System.DateTime.Now.ToBinary()), id)));
+            m_channel?.Send(new Packet(new EventMsg(EventCode.PING, BytesHelpper.long2bytes(System.DateTime.Now.ToBinary()), m_channel.id)));
         }
 
         protected void EVENT_PING_RPC(object param)
@@ -84,9 +82,14 @@ namespace BEBE.Engine.Service.Net
             long databinary = BytesHelpper.bytes2long(content);
             System.DateTime date = System.DateTime.FromBinary(databinary);
             double milliseconds = (System.DateTime.Now - date).TotalMilliseconds;
-            Logging.Debug.Log($"clinet {id} ping is {milliseconds} ms ");
+            Logging.Debug.Log($"clinet {m_channel.id} ping is {milliseconds} ms ");
         }
 
+        protected void EVENT_SEND_JOIN_REQUEST(object param)
+        {
+            Logging.Debug.Log($"EVENT_SEND_JOIN_REQUEST");
+            m_channel?.Send(new Packet(new EventMsg(EventCode.ON_JOIN_REQUEST_RECV, m_channel.id)));
+        }
 
     }
 
@@ -115,17 +118,17 @@ namespace BEBE.Engine.Service.Net
             //新线程监听客户端连接请求
             ThreadPool.QueueUserWorkItem(async state =>
             {
-                byte id = 0;
                 while (toggle)
                 {
+
                     TcpClient accept = await m_listenr.AcceptTcpClientAsync();
+                    int id = IdGenerator.Get();
                     Logging.Debug.LogWarning($"SERVER --> accepting a new client {id} ...");
-                    Channel channel = new Channel(this, accept);
+                    Channel channel = new Channel(id, accept);
                     m_channels.AddOrUpdate(id, channel, (id, channel) => channel);
                     //将id返回给client
                     channel.Send(new Packet(new EventMsg(Event.EventCode.ON_SERVER_CONNECTED, id)));
                     // channel.Send(new Packet(new StringMsg($"Hello client {id}!")));
-                    id++;
                 }
             });
         }
@@ -177,7 +180,7 @@ namespace BEBE.Engine.Service.Net
             EventMsg msg = (EventMsg)param;
             if (m_channels.TryGetValue(msg.Id, out Channel channel))
             {
-                channel.Send(new Packet(new EventMsg(EventCode.PING_RPC, msg.Content, id)));
+                channel.Send(new Packet(new EventMsg(EventCode.PING_RPC, msg.Content, channel.id)));
             }
         }
 

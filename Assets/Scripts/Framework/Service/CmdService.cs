@@ -11,10 +11,10 @@ namespace BEBE.Framework.Service
 {
     public class ClientCmdService : CmdService
     {
-        private byte actorId;
+        private byte actorId; // 范围 1 ~ 10号位
         public ClientCmdService(NetService netService) : base(netService)
         {
-            actorId = ((byte)MgrsContainer.GetMgr<NetMgr>().Client.Id);
+            
         }
 
         public int tick_sync = -1;//同步的帧数
@@ -71,7 +71,7 @@ namespace BEBE.Framework.Service
 
         protected void send_cmd()
         {
-            m_netservice.Send(new Packet(new EventMsg(EventCode.ON_RECV_INPUT, m_inputs2send.GetBytes(), m_netservice.Id)));
+            m_netservice.Send(new Packet(new EventMsg(EventCode.ON_RECV_INPUT, m_inputs2send.GetBytes(), ((TCPClientService)m_netservice).Id)));
         }
 
         private void sync_cmd(PlayerInputs inputs)

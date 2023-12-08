@@ -26,7 +26,9 @@ namespace BEBE.Framework.Editor
         }
 
         const string ClassHeaderPattern =
-        @"using UnityEngine;
+        @"using BEBE.Framework.Attibute;
+using BEBE.Framework.UI;
+using UnityEngine;
 using UnityEngine.UI;
 [PrefabLocation(""ui/"")]
 public class {0} : UIView {{

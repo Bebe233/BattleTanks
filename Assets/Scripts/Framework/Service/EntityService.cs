@@ -29,7 +29,7 @@ namespace BEBE.Framework.Service
         {
             //Instantiate Entity
             // step 1 -> load info TODO
-
+            
             // step 2 -> load prefab
             var prefab = srcMgr.GetPrefabAsset(entity_name);
             // step 3 -> instantiate gameobject
@@ -88,7 +88,7 @@ namespace BEBE.Framework.Service
         protected PlayerInputs playerInputs => cmdMgr.GetPlayerInputs();
         public void DoCmd()
         {
-            BEBE.Engine.Logging.Debug.Log($"Tick {frameMgr.Tick}  {playerInputs.ToString()}");
+            // BEBE.Engine.Logging.Debug.Log($"Tick {frameMgr.Tick}  {playerInputs.ToString()}");
             if (playerInputs.get(frameMgr.Tick, out PlayerInput input))
             {
                 // BEBE.Engine.Logging.Debug.Log("getCmd");

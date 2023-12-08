@@ -13,7 +13,7 @@ namespace BEBE.Framework.Managers
 
         public override void Start()
         {
-            CreatePlayer(((byte)MgrsContainer.GetMgr<NetMgr>().Client.Id));
+           
         }
 
         public override void FixedUpdate()

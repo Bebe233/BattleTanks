@@ -10,6 +10,7 @@ namespace BEBE.Engine.Service.Net
     ///网络连接
     public class Channel : IDisposable
     {
+        public int id = -1;
         private TcpClient m_client = new TcpClient();
         private string ip;
         private int port;
@@ -19,8 +20,9 @@ namespace BEBE.Engine.Service.Net
             this.port = port;
         }
 
-        public Channel(NetService sender, TcpClient accpet)
+        public Channel(int id, TcpClient accpet)
         {
+            this.id = id;
             m_client = accpet;
             var endPoint = accpet.Client.LocalEndPoint as IPEndPoint;
             this.ip = endPoint.Address.ToString();

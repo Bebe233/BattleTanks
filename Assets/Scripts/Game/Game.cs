@@ -1,9 +1,16 @@
+using BEBE.Engine.Service;
 using BEBE.Framework.Managers;
 using BEBE.Framework.Utils;
 using UnityEngine;
 
-public class Game : Singleton<Game>
+public class Game : BaseService
 {
+
+    public Game()
+    {
+        register_events();
+    }
+
     /// <summary>
     /// 进入游戏
     /// </summary>
@@ -11,21 +18,14 @@ public class Game : Singleton<Game>
     {
         BEBE.Engine.Logging.Debug.Log("Enter game");
         //加载开始页面
-        // LoadSceneStartGame();
+        LoadSceneStartGame();
     }
 
     protected UIMgr uiMgr => MgrsContainer.GetMgr<UIMgr>();
     protected SrcMgr srcMgr => MgrsContainer.GetMgr<SrcMgr>();
     public void LoadSceneStartGame()
     {
-        // uiMgr.LoadCanvasUI<GameStartUIView>();
-        MgrsContainer.AddMgr<FrameMgr>()?.Awake();
-        MgrsContainer.GetMgr<FrameMgr>()?.Start();
-        MgrsContainer.AddMgr<CmdMgr>()?.Awake();
-        MgrsContainer.GetMgr<CmdMgr>()?.Start();
-        MgrsContainer.AddMgr<EntityMgr>()?.Awake();
-        MgrsContainer.GetMgr<EntityMgr>()?.Start();
-
+        uiMgr.LoadCanvasUI<GameStartUIView>();
     }
 
     public void LoadSceneLevel(int selectionIndex)
@@ -47,5 +47,15 @@ public class Game : Singleton<Game>
 
         //开始游戏
 
+    }
+
+    protected void EVENT_ON_GAME_START(object param)
+    {
+        MgrsContainer.AddMgr<FrameMgr>()?.Awake();
+        MgrsContainer.GetMgr<FrameMgr>()?.Start();
+        MgrsContainer.AddMgr<CmdMgr>()?.Awake();
+        MgrsContainer.GetMgr<CmdMgr>()?.Start();
+        MgrsContainer.AddMgr<EntityMgr>()?.Awake();
+        MgrsContainer.GetMgr<EntityMgr>()?.Start();
     }
 }
