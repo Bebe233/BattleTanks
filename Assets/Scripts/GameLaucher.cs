@@ -1,17 +1,10 @@
-using System.Collections.Generic;
-using System.Linq;
-using BEBE.Engine.Math;
-using BEBE.Framework.Managers;
 using BEBE.Framework.Utils;
-using UnityEngine;
+using BEBE.Framework.Managers;
 /// <summary>
 /// 游戏入口
 /// </summary>
 public class GameLaucher : SingletonGameobject<GameLaucher>
 {
-    public const int FrameRate = 30;
-    public LFloat InverseFrameRate = 1.ToLFloat() / FrameRate;
-    private float timer;
     private void Awake()
     {
         // 设置Logger
@@ -38,21 +31,12 @@ public class GameLaucher : SingletonGameobject<GameLaucher>
         try
         {
             MgrsContainer.Update();
-            do_fixed_update();
-        }
-        catch
-        {
 
+            IntervalExecuteHelper.Invoke(MgrsContainer.FixedUpdate);
         }
-    }
-
-    private void do_fixed_update()
-    {
-        timer += Time.deltaTime;
-        if (timer >= InverseFrameRate)
+        catch (System.Exception e)
         {
-            timer -= InverseFrameRate;
-            MgrsContainer.FixedUpdate();
+            BEBE.Engine.Logging.Debug.LogException(e);
         }
     }
 

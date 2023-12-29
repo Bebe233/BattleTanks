@@ -12,8 +12,8 @@ namespace BEBE.Framework.Managers
     {
         private ClientCmdService m_ccmdsvc;
         private ServerCmdService m_scmdsvc;
-        private NetService m_client => MgrsContainer.GetMgr<NetMgr>().Client;
-        private NetService m_server => MgrsContainer.GetMgr<NetMgr>().Server;
+        private NetworkService m_client => MgrsContainer.GetMgr<NetMgr>().Client;
+        private NetworkService m_server => MgrsContainer.GetMgr<NetMgr>().Server;
 
         public override void Awake()
         {

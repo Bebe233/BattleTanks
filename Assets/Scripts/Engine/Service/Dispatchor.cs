@@ -28,7 +28,7 @@ namespace BEBE.Engine.Managers
                     {
                         try
                         {
-                            // Debug.LogWarning($"CreateDelegate {eCode.ToString()} {method_name}");
+                            Debug.LogWarning($"CreateDelegate --> {t.Name} :: {eCode.ToString()} :: {method_name}");
                             EventHandler handler = Delegate.CreateDelegate(typeof(EventHandler), sender, method) as EventHandler;
                             //TODO
                             if (eCode2handler.ContainsKey(eCode))
@@ -89,6 +89,16 @@ namespace BEBE.Engine.Managers
                     }
                 }
             }
+        }
+
+        public static void Dispatch(EventCode eCode, object param)
+        {
+            Dispatch(null, eCode, param);
+        }
+
+        public static void Dispatch(EventCode eCode)
+        {
+            Dispatch(eCode, null);
         }
     }
 }

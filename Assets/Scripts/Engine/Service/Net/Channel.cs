@@ -1,16 +1,16 @@
 using System;
-using System.Threading.Tasks;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using System.Threading.Tasks;
 using static BEBE.Engine.Logging.Debug;
-using System.IO;
 
 namespace BEBE.Engine.Service.Net
 {
     ///网络连接
     public class Channel : IDisposable
     {
-        public int id = -1;
+        public int Id { get; set; }
         private TcpClient m_client = new TcpClient();
         private string ip;
         private int port;
@@ -22,7 +22,7 @@ namespace BEBE.Engine.Service.Net
 
         public Channel(int id, TcpClient accpet)
         {
-            this.id = id;
+            Id = id;
             m_client = accpet;
             var endPoint = accpet.Client.LocalEndPoint as IPEndPoint;
             this.ip = endPoint.Address.ToString();
@@ -34,8 +34,10 @@ namespace BEBE.Engine.Service.Net
             await m_client.ConnectAsync(ip, port);
             LogWarning("channel connected !");
         }
-        BinaryReader m_binaryReader;
-        public void Recv()
+        private NetworkStream stream;
+        private BinaryWriter m_binaryWriter;
+        private BinaryReader m_binaryReader;
+        public void RecieveMsg()
         {
             try
             {
@@ -62,18 +64,17 @@ namespace BEBE.Engine.Service.Net
             switch (packet.MsgType)
             {
                 case MsgType.EventCode:
-                    // Log($"RPC EVENTCODE");
-                    packet.DecodeEventCode();
+                    var event_msg = packet.ParseEventMsg();
+                    // Log($"RPC EVENTCODE --> {event_msg.EventCode}");
+                    Managers.Dispatchor.Dispatch(event_msg.EventCode, event_msg);
                     break;
                 case MsgType.String:
-                    var msg = packet.DecodeString();
-                    Log($"RPC MSG -->{msg.Id} {msg.Content}");
+                    var string_msg = packet.ParseStringMsg();
+                    Log($"RPC MSG --> {string_msg.Id} {string_msg.Content}");
                     break;
             }
         }
 
-        NetworkStream stream;
-        BinaryWriter m_binaryWriter;
         public void Send(Packet packet)
         {
             if (!m_client.Connected) return;
@@ -86,9 +87,25 @@ namespace BEBE.Engine.Service.Net
 
         public void Dispose()
         {
-            m_client.Close();
+            if (m_client.Connected)
+                m_client.Close();
             m_client.Dispose();
+            m_client = null;
+            if (m_binaryReader != null)
+            {
+                m_binaryReader.Close();
+                m_binaryReader.Dispose();
+                m_binaryReader = null;
+            }
+            if (m_binaryWriter != null)
+            {
+                m_binaryWriter.Close();
+                m_binaryWriter.Dispose();
+                m_binaryWriter = null;
+            }
+            stream = null;
             LogWarning("channel disconnected !");
         }
+        
     }
 }

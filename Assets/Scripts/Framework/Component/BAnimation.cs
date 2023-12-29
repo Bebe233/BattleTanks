@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 namespace BEBE.Framework.Component
 {
-
-
     public class BAnimation
     {
         protected bool isPlaying = false;

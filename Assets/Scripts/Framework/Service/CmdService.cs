@@ -12,7 +12,7 @@ namespace BEBE.Framework.Service
     public class ClientCmdService : CmdService
     {
         private byte actorId; // 范围 1 ~ 10号位
-        public ClientCmdService(NetService netService) : base(netService)
+        public ClientCmdService(NetworkService netService) : base(netService)
         {
             
         }
@@ -140,7 +140,7 @@ namespace BEBE.Framework.Service
 
     public class ServerCmdService : CmdService
     {
-        public ServerCmdService(NetService netService) : base(netService)
+        public ServerCmdService(NetworkService netService) : base(netService)
         {
 
         }

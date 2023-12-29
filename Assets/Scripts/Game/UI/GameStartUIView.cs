@@ -33,6 +33,6 @@ public class GameStartUIView : UIView
         }
         BEBE.Engine.Logging.Debug.Log($"event_on_button_click {name}");
         //send order to server
-        BEBE.Engine.Managers.Dispatchor.Dispatch(null, BEBE.Engine.Event.EventCode.SEND_JOIN_REQUEST, null);
+        BEBE.Engine.Managers.Dispatchor.Dispatch(BEBE.Engine.Event.EventCode.SEND_JOIN_IN_REQUEST, null);
     }
 }

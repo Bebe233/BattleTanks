@@ -3,15 +3,15 @@ namespace BEBE.Engine.Event
     public enum EventCode
     {
         ON_GAME_START,
-        ON_SERVER_CONNECTED,
+        GET_CHANNEL_ID,
         PING_RPC,
-        SEND_JOIN_REQUEST,
-        ON_CLIENT_CONNECTED,
-        ON_CLIENT_DISCONNECTED,
+        SEND_JOIN_IN_REQUEST,
+        RCP_FROM_CLIENT,
+        ON_CLIENT_DISCONNECTING,
         PING,
         ON_SYNC_CMD,
         ON_RECV_INPUT,
-        ON_JOIN_REQUEST_RECV,
+        JOIN_IN_REQUEST,
         ENUM_COUNT
     }
 }

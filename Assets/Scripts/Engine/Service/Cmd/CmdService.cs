@@ -3,8 +3,8 @@ namespace BEBE.Engine.Service.Cmd
 {
     public abstract class CmdService : BaseService
     {
-        protected NetService m_netservice;
-        public CmdService(NetService netService)
+        protected NetworkService m_netservice;
+        public CmdService(NetworkService netService)
         {
             register_events();
             m_netservice = netService;

@@ -29,20 +29,18 @@ namespace BEBE.Engine.Service.Net
             event_msg.Serialize(ref buffer);
         }
 
-        public StringMsg DecodeString()
+        public StringMsg ParseStringMsg()
         {
             var res = new StringMsg();
             res.Deserialize(buffer);
             return res;
         }
 
-        public void DecodeEventCode()
+        public EventMsg ParseEventMsg()
         {
             var res = new EventMsg();
             res.Deserialize(buffer);
-            //EventCode
-            EventCode eCode = res.EventCode;
-            Dispatchor.Dispatch(null, eCode, res);
+            return res;
         }
     }
 }
