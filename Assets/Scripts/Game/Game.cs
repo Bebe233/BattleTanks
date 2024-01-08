@@ -1,16 +1,12 @@
 using BEBE.Engine.Service;
+using BEBE.Framework.Event;
 using BEBE.Framework.Managers;
+using BEBE.Framework.Module;
 using BEBE.Framework.Utils;
 using UnityEngine;
 
 public class Game : BaseService
 {
-
-    public Game()
-    {
-        register_events();
-    }
-
     /// <summary>
     /// 进入游戏
     /// </summary>
@@ -25,7 +21,7 @@ public class Game : BaseService
     protected SrcMgr srcMgr => MgrsContainer.GetMgr<SrcMgr>();
     public void LoadSceneStartGame()
     {
-        uiMgr.LoadCanvasUI<GameStartUIView>();
+       uiMgr.LoadCanvasUI<GameStartUIView>();
     }
 
     public void LoadSceneLevel(int selectionIndex)
@@ -41,8 +37,8 @@ public class Game : BaseService
         }
         Debug.Log($"LoadSceneLevel Mode {selectionIndex}");
         //加载地图
-        GameObject map_1 = srcMgr.GetPrefabAsset("maps/map_1");
-        GameObject.Instantiate(map_1, GameObject.Find("Canvas").transform);
+        // GameObject map_1 = srcMgr.GetPrefabAsset("maps/map_1");
+        // GameObject.Instantiate(map_1, GameObject.Find("Canvas").transform);
         //加载角色
 
         //开始游戏
@@ -57,5 +53,10 @@ public class Game : BaseService
         MgrsContainer.GetMgr<CmdMgr>()?.Start();
         MgrsContainer.AddMgr<EntityMgr>()?.Awake();
         MgrsContainer.GetMgr<EntityMgr>()?.Start();
+    }
+
+    protected override void register_events()
+    {
+        Dispatchor.Register(this, Constant.EVENT_PREFIX);
     }
 }

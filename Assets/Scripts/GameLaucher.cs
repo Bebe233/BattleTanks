@@ -12,19 +12,22 @@ public class GameLaucher : SingletonGameobject<GameLaucher>
         BEBE.Engine.Logging.Debug.prefix = " Frame Sync Test | " + System.DateTime.Now + " | ";
         BEBE.Engine.Logging.Debug.TraceModeOn();
         // 加载管理器
-        MgrsContainer.AddMgr<SrcMgr>()?.Awake();
-        MgrsContainer.AddMgr<UIMgr>()?.Awake();
-        MgrsContainer.AddMgr<NetMgr>()?.Awake();
-
+        MgrsContainer.AddMgr<SrcMgr>();
+        MgrsContainer.AddMgr<UIMgr>();
+        MgrsContainer.AddMgr<NetMgr>();
+        MgrsContainer.AddMgr<RoomMgr>();
+        MgrsContainer.AddMgr<CommonStatusMgr>();
+        MgrsContainer.Awake();
     }
 
     void Start()
     {
         MgrsContainer.Start();
-
         // 启动游戏
         new Game().EnterGame();
     }
+
+    private IntervalExecuteHelper intervalExe = new IntervalExecuteHelper(30);
 
     private void Update()
     {
@@ -32,7 +35,7 @@ public class GameLaucher : SingletonGameobject<GameLaucher>
         {
             MgrsContainer.Update();
 
-            IntervalExecuteHelper.Invoke(MgrsContainer.FixedUpdate);
+            intervalExe.Invoke(MgrsContainer.FixedUpdate);
         }
         catch (System.Exception e)
         {

@@ -2,9 +2,11 @@ using System.Collections.Concurrent;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
-using BEBE.Engine.Event;
+using BEBE.Framework.Event;
 using BEBE.Engine.Service.Net;
 using BEBE.Engine.Service.Net.Utils;
+using BEBE.Framework.Service.Net;
+using System;
 
 namespace BEBE.Engine.Service.Net
 {
@@ -14,27 +16,31 @@ namespace BEBE.Engine.Service.Net
         public abstract void Send(Packet packet);
     }
 
-    public class TCPClientService : NetworkService
+    public abstract class ClientService : NetworkService
     {
         public int Id => m_channel.Id;
-        private Channel m_channel;
+        protected Channel m_channel;
         private bool is_connecting = false;
-        public async void Connect(string ip_address, int port)
+        public event Action OnConnected, OnDisconnected;
+
+        public ClientService(string ip_address, int port)
         {
-            if (is_connecting) return;
-            m_channel = new Channel(ip_address, port);
-            await m_channel?.ConnectAsync();
-            is_connecting = true;
+
         }
 
-        public void Disconnect()
+        public virtual async void Connect()
+        {
+            if (is_connecting) return;
+            await m_channel?.ConnectAsync();
+            is_connecting = true;
+            OnConnected?.Invoke();
+        }
+
+        public virtual void Disconnect()
         {
             if (!is_connecting) return;
             is_connecting = false;
-            //向服务端发送断开通知
-            m_channel?.Send(new Packet(new EventMsg(EventCode.ON_CLIENT_DISCONNECTING, m_channel.Id)));
-            m_channel?.Dispose();
-            m_channel = null;
+            OnDisconnected?.Invoke();
         }
 
         public override void Send(Packet packet)
@@ -47,50 +53,16 @@ namespace BEBE.Engine.Service.Net
         {
             if (is_connecting)
             {
-
                 m_channel?.RecieveMsg();
-                // ping();
             }
-
         }
-
-
-        protected void EVENT_GET_CHANNEL_ID(object param)
-        {
-            EventMsg msg = (EventMsg)param;
-            m_channel.Id = msg.Id;
-            Logging.Debug.Log($"EVENT_GET_CHANNEL_ID --> Your client id is {msg.Id} to server");
-            m_channel?.Send(new Packet(new EventMsg(EventCode.RCP_FROM_CLIENT, msg.Id)));
-        }
-
-        private void ping()
-        {
-            m_channel?.Send(new Packet(new EventMsg(EventCode.PING, BytesHelpper.long2bytes(System.DateTime.Now.ToBinary()), m_channel.Id)));
-        }
-
-        protected void EVENT_PING_RPC(object param)
-        {
-            EventMsg msg = (EventMsg)param;
-            byte[] content = msg.Content;
-            long databinary = BytesHelpper.bytes2long(content);
-            System.DateTime date = System.DateTime.FromBinary(databinary);
-            double milliseconds = (System.DateTime.Now - date).TotalMilliseconds;
-            Logging.Debug.Log($"clinet {m_channel.Id} ping is {milliseconds} ms ");
-        }
-
-        protected void EVENT_SEND_JOIN_IN_REQUEST(object param)
-        {
-            Logging.Debug.Log($"EVENT_SEND_JOIN_IN_REQUEST");
-            m_channel?.Send(new Packet(new EventMsg(EventCode.JOIN_IN_REQUEST, m_channel.Id)));
-        }
-
     }
 
-    public class TCPServerService : NetworkService
+    public abstract class ServerService : NetworkService
     {
         private TcpListener m_listenr;
 
-        public TCPServerService(string ip_address, int port)
+        public ServerService(string ip_address, int port)
         {
             m_listenr = new TcpListener(IPAddress.Parse(ip_address), port);
             m_listenr.Server.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
@@ -102,9 +74,11 @@ namespace BEBE.Engine.Service.Net
             //过的数据保持未确认状态。大多数网络应用程序应使用 Nagle 算法。
         }
 
-        private ConcurrentDictionary<int, Channel> m_channels = new ConcurrentDictionary<int, Channel>();
+        protected ConcurrentDictionary<int, Session> m_sessions = new ConcurrentDictionary<int, Session>();
         private bool toggle_listener = false;
-        public void StartListening()
+        public event Action<int, TcpClient> OnClientAccepted;
+        private IdGenerator id_gen = new IdGenerator();
+        public virtual void StartListening()
         {
             toggle_listener = true;
             m_listenr.Start();
@@ -115,24 +89,21 @@ namespace BEBE.Engine.Service.Net
                 {
 
                     TcpClient acceptor = await m_listenr.AcceptTcpClientAsync();
-                    int channel_id = IdGenerator.Get();
+                    int channel_id = id_gen.Get();
+                    OnClientAccepted?.Invoke(channel_id, acceptor);
                     Logging.Debug.LogWarning($"SERVER --> accepting a new client {channel_id} ...");
-                    Channel channel = new Channel(channel_id, acceptor);
-                    m_channels.AddOrUpdate(channel_id, channel, (id, channel) => channel);
-                    //将id返回给client
-                    channel.Send(new Packet(new EventMsg(Event.EventCode.GET_CHANNEL_ID, channel_id)));
                 }
             });
         }
 
-        public void StopListening()
+        public virtual void StopListening()
         {
             toggle_listener = false;
-            foreach (var channel in m_channels.Values)
+            foreach (var session in m_sessions.Values)
             {
-                channel.Dispose();
+                session.Dispose();
             }
-            m_channels.Clear();
+            m_sessions.Clear();
             m_listenr.Stop();
         }
 
@@ -140,52 +111,21 @@ namespace BEBE.Engine.Service.Net
         {
             ThreadPool.QueueUserWorkItem(state =>
             {
-                foreach (var channel in m_channels.Values)
+                foreach (var session in m_sessions.Values)
                 {
-                    channel.RecieveMsg();
+                    session.RecieveMsg();
                 }
             });
         }
 
         public override void Send(Packet packet)
         {
-            foreach (var channel in m_channels.Values)
+            foreach (var session in m_sessions.Values)
             {
-                channel.Send(packet);
-            }
-        }
-        protected void EVENT_RCP_FROM_CLIENT(object param)
-        {
-            EventMsg msg = (EventMsg)param;
-            Logging.Debug.Log($"EVENT_RCP_FROM_CLIENT --> rcp from client {msg.Id} ");
-        }
-
-        protected void EVENT_ON_CLIENT_DISCONNECTING(object param)
-        {
-            EventMsg msg = (EventMsg)param;
-            Logging.Debug.Log($"EVENT_ON_CLIENT_DISCONNECTING --> client {msg.Id} is disconnecting");
-            if (m_channels.TryRemove(msg.Id, out Channel channel))
-            {
-                channel.Dispose();
-                channel = null;
+                session.Send(packet);
             }
         }
 
-        protected void EVENT_PING(object param)
-        {
-            EventMsg msg = (EventMsg)param;
-            if (m_channels.TryGetValue(msg.Id, out Channel channel))
-            {
-                channel.Send(new Packet(new EventMsg(EventCode.PING_RPC, msg.Content, channel.Id)));
-            }
-        }
-
-        private void EVENT_JOIN_IN_REQUEST(object param)
-        {
-            EventMsg msg = (EventMsg)param;
-            int channel_id = msg.Id;
-            Logging.Debug.Log($"Server recieved JOIN IN REQUEST from client {channel_id}");
-        }
 
     }
 }

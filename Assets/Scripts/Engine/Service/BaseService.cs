@@ -1,5 +1,3 @@
-using BEBE.Engine.Managers;
-
 namespace BEBE.Engine.Service
 {
     public abstract class BaseService
@@ -8,10 +6,7 @@ namespace BEBE.Engine.Service
         {
             register_events();
         }
-        
-        protected void register_events()
-        {
-            Dispatchor.Register(this, "EVENT_");
-        }
+
+        protected abstract void register_events();
     }
 }

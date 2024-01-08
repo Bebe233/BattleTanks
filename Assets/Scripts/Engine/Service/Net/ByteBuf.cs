@@ -1,17 +1,18 @@
 using System;
 using System.IO;
 using BEBE.Engine.Math;
-
+using BEBE.Engine.Logging;
 namespace BEBE.Engine.Service.Net
 {
     public class ByteBuf
     {
-        public int Length => data == null ? 0 : data.Length;
+        public int Capacity => data == null ? 0 : data.Length;
         protected byte[] data;
         public byte[] Data => data;
         public ByteBuf(byte[] buffer)
         {
             data = buffer;
+            writer_idx = Capacity;
         }
 
         public ByteBuf(int capacity)
@@ -24,49 +25,62 @@ namespace BEBE.Engine.Service.Net
             data = new byte[4];
         }
 
-        protected int srcReadIdx = 0, srcWriteIdx = 0;
+        protected int reader_idx = 0, writer_idx = 0;
+        protected int mark_reader_idx, mark_writer_idx;
 
-        public void SetReadIndex(int idx)
-        {
-            srcReadIdx = idx;
-        }
-        public void ResetReadIndex() { srcReadIdx = 0; }
-        public int GetReadIndex()
-        {
-            return srcReadIdx;
-        }
+        public int Readablebytes => writer_idx - reader_idx;
 
-        public void SetWriteIndex(int idx)
+        public int ReaderIndex()
         {
-            srcWriteIdx = idx;
+            return reader_idx;
         }
-        public void ResetWriteIndex() { srcWriteIdx = 0; }
-        public int GetWriteIndex()
+        public void ReaderIndex(int idx)
         {
-            return srcWriteIdx;
+            reader_idx = idx;
         }
+        public void MarkReaderIndex() { mark_reader_idx = reader_idx; }
+        public void ResetReaderIndex() { reader_idx = mark_reader_idx; }
+
+        public int WriterIndex()
+        {
+            return writer_idx;
+        }
+        public void WriterIndex(int idx)
+        {
+            writer_idx = idx;
+        }
+        public void MarkWriterIndex() { mark_writer_idx = writer_idx; }
+        public void ResetWriterIndex() { writer_idx = mark_writer_idx; }
 
         public byte[] ReadBytes()
         {
-            int length = Length - srcReadIdx;
-            if (length > 0)
-                return ReadBytes(length);
-            else
-                return null;
+            return ReadBytes(Readablebytes);
         }
 
         public byte[] ReadBytes(int length)
         {
-            if (length <= 0) return null;
+            if (length <= 0 || length > Readablebytes)
+            {
+                // Debug.LogError($"readbytes length is out of range ! length --> {length} , readablebytes --> {Readablebytes} , readerIdx --> {reader_idx} , writerIdx --> {writer_idx}");
+                return null;
+            }
             byte[] res = new byte[length];
-            Buffer.BlockCopy(data, srcReadIdx, res, 0, length);
-            srcReadIdx += length;
+            Buffer.BlockCopy(data, reader_idx, res, 0, length);
+            reader_idx += length;
             return res;
         }
 
         public byte ReadByte()
         {
-            return data[srcReadIdx++];
+            return data[reader_idx++];
+        }
+
+        public bool ReadBool()
+        {
+            byte val = ReadByte();
+            if (val == 0) return false;
+            else if (val == 1) return true;
+            else return false;
         }
 
         public int ReadInt()
@@ -84,16 +98,25 @@ namespace BEBE.Engine.Service.Net
             return ReadInt().ToLFloat(true);
         }
 
+        public string ReadString()
+        {
+            int len = ReadInt();
+            return System.Text.Encoding.UTF8.GetString(ReadBytes(len));
+        }
+
         public void WriteBytes(BinaryReader reader)
         {
-            int index = reader.Read(data, 0, sizeof(int));
-            if (index == 0) return;
-            SetWriteIndex(index);
+            WriteBytes(reader, writer_idx, sizeof(int));
             int length = ReadInt();
             if (length == 0) return;
             resizeIfNeeded(length);
-            index = reader.Read(data, index, length);
-            SetWriteIndex(index);
+            WriteBytes(reader, writer_idx, length);
+        }
+
+        public void WriteBytes(BinaryReader reader, int srcIdx, int length)
+        {
+            int count = reader.Read(data, srcIdx, length);
+            WriterIndex(srcIdx + count);
         }
 
         public void WriteBytes(byte[] src)
@@ -105,25 +128,29 @@ namespace BEBE.Engine.Service.Net
         public void WriteBytes(byte[] src, int srcIdx, int length)
         {
             resizeIfNeeded(length);
-            Buffer.BlockCopy(src, srcIdx, data, srcWriteIdx, length);
-            srcWriteIdx += length;
+            Buffer.BlockCopy(src, srcIdx, data, writer_idx, length);
+            writer_idx += length;
         }
 
-        public void ResizeIfNeeded(int length) { resizeIfNeeded(length); }
         private void resizeIfNeeded(int length)
         {
-            int remain = Length - srcWriteIdx;
+            int remain = Capacity - writer_idx;
             if (remain < length)
             {
                 int need = length - remain;
-                Array.Resize(ref data, Length + need);
+                Array.Resize(ref data, Capacity + need);
             }
         }
 
         public void WriteByte(byte val)
         {
             resizeIfNeeded(sizeof(byte));
-            data[srcWriteIdx++] = val;
+            data[writer_idx++] = val;
+        }
+
+        public void WriteBool(bool isTrue)
+        {
+            WriteByte(isTrue ? (byte)1 : (byte)0);
         }
 
         public void WriteInt(int val)
@@ -140,7 +167,9 @@ namespace BEBE.Engine.Service.Net
 
         public void WriteString(string msg)
         {
-            resizeIfNeeded(msg.Length);
+            byte[] chars = System.Text.Encoding.UTF8.GetBytes(msg);
+            WriteInt(chars.Length);
+            resizeIfNeeded(chars.Length + sizeof(int));
             WriteBytes(System.Text.Encoding.UTF8.GetBytes(msg));
         }
 
@@ -148,6 +177,12 @@ namespace BEBE.Engine.Service.Net
         {
             resizeIfNeeded(LFloat.size);
             WriteInt(val.val);
+        }
+
+        public void Clear()
+        {
+            reader_idx = writer_idx = 0;
+            mark_reader_idx = mark_writer_idx = 0;
         }
     }
 }

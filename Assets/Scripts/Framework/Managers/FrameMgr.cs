@@ -21,7 +21,7 @@ namespace BEBE.Framework.Managers
             if (toggle)
             {
                 ++tick;
-                //BEBE.Engine.Logging.Debug.Log($"Frame {frame}");
+                BEBE.Engine.Logging.Debug.Log($"tick {tick}");
             }
         }
 

@@ -1,395 +1,371 @@
- Frame Sync Test | 2023/12/29 17:04:25 |  Log --> BEBE.Framework.Managers.SrcMgr added!
- Frame Sync Test | 2023/12/29 17:04:25 |  Log --> BEBE.Framework.Managers.UIMgr added!
- Frame Sync Test | 2023/12/29 17:04:25 |  Log --> BEBE.Framework.Managers.NetMgr added!
- Frame Sync Test | 2023/12/29 17:04:25 |  Warn --> CreateDelegate --> TCPServerService :: RCP_FROM_CLIENT :: EVENT_RCP_FROM_CLIENT
- Frame Sync Test | 2023/12/29 17:04:25 |  Warn --> CreateDelegate --> TCPServerService :: ON_CLIENT_DISCONNECTING :: EVENT_ON_CLIENT_DISCONNECTING
- Frame Sync Test | 2023/12/29 17:04:25 |  Warn --> CreateDelegate --> TCPServerService :: PING :: EVENT_PING
- Frame Sync Test | 2023/12/29 17:04:25 |  Warn --> CreateDelegate --> TCPServerService :: JOIN_IN_REQUEST :: EVENT_JOIN_IN_REQUEST
- Frame Sync Test | 2023/12/29 17:04:25 |  Warn --> CreateDelegate --> TCPClientService :: GET_CHANNEL_ID :: EVENT_GET_CHANNEL_ID
- Frame Sync Test | 2023/12/29 17:04:25 |  Warn --> CreateDelegate --> TCPClientService :: PING_RPC :: EVENT_PING_RPC
- Frame Sync Test | 2023/12/29 17:04:25 |  Warn --> CreateDelegate --> TCPClientService :: SEND_JOIN_IN_REQUEST :: EVENT_SEND_JOIN_IN_REQUEST
- Frame Sync Test | 2023/12/29 17:04:25 |  Warn --> CreateDelegate --> Game :: ON_GAME_START :: EVENT_ON_GAME_START
- Frame Sync Test | 2023/12/29 17:04:25 |  Warn --> CreateDelegate --> Game :: ON_GAME_START :: EVENT_ON_GAME_START
- Frame Sync Test | 2023/12/29 17:04:25 |  Log --> Enter game
- Frame Sync Test | 2023/12/29 17:04:25 |  Warn --> SERVER --> accepting a new client 0 ...
- Frame Sync Test | 2023/12/29 17:04:25 |  Warn --> channel connected !
- Frame Sync Test | 2023/12/29 17:04:25 |  Log --> EVENT_GET_CHANNEL_ID --> Your client id is 0 to server
- Frame Sync Test | 2023/12/29 17:04:25 |  Log --> EVENT_RCP_FROM_CLIENT --> rcp from client 0 
- Frame Sync Test | 2023/12/29 17:04:25 |  Log --> event_on_button_click bebe
- Frame Sync Test | 2023/12/29 17:04:25 |  Log --> EVENT_SEND_JOIN_IN_REQUEST
- Frame Sync Test | 2023/12/29 17:04:25 |  Log --> Server recieved JOIN IN REQUEST from client 0
- Frame Sync Test | 2023/12/29 17:04:25 |  Warn --> channel disconnected !
- Frame Sync Test | 2023/12/29 17:04:25 |  Warn --> channel disconnected !
-0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0291 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0325 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0035 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9743 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9794 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.997 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9968 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9969 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0033 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0034 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0033 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9998 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0001 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9965 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9962 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9961 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0001 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0003 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0001 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9998 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9998 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0449 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0433 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.955 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9567 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0001 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0001 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0004 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9997 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0004 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0003 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9997 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0001 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0019 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0019 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9996 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0002 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0019 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0001 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0147 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0125 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0087 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9921 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9965 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9997 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0004 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0003 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0004 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0023 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0024 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0014 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0034 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9989 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9966 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.9996 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 8.9964 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.9962 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9997 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0321 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0005 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0004 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9683 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9997 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9996 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9996 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0003 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0004 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0002 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0034 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0012 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0031 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9968 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9986 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9968 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9998 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0001 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0302 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0003 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0078 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0029 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0028 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0028 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0003 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9966 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9967 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9995 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9997 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0003 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0001 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9997 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9998 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0003 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9998 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9995 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0002 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0006 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0003 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.026 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0324 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0297 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9746 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.968 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9996 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0045 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0037 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.003 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9954 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.996 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9998 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0002 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0001 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9996 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0331 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0426 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0442 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9668 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9572 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9554 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9998 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0303 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0362 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0009 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9703 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9639 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9995 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9998 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0002 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0005 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0006 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0008 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0005 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9998 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9994 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0001 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0021 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0001 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9976 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0002 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0004 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9997 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9594 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9595 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9614 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0016 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.002 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0003 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9983 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9998 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9981 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0031 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0018 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9972 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0001 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0033 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0032 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9959 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0007 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9968 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0432 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0035 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0033 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9605 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9998 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9968 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9964 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.997 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0036 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0032 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0029 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.996 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9966 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9967 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0006 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0004 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0031 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0029 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9965 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9967 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9998 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0001 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0003 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0002 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0001 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 8.0002 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0001 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9998 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0508 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0457 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0465 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9526 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9545 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9537 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0002 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0034 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0031 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9965 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9968 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9972 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9997 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0004 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9996 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9993 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0003 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0003 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9997 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0001 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9995 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0002 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0251 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0301 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.034 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9754 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9733 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9694 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0032 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0037 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9973 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9995 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9973 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9968 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9998 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.005 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0041 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0035 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9948 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9961 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9966 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9997 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9993 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9993 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9997 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0001 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0002 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0002 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9998 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0001 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0002 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0002 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0001 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0001 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0378 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.046 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0693 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9706 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9101 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.8871 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 14.949 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 15.9965 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 14.996 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0002 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0358 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0449 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0007 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9677 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.9566 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 8.0026 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0002 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0022 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9968 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9968 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9968 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0003 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0028 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0033 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0031 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0004 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9967 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0007 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9997 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9955 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9967 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0003 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0008 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0033 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.0031 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0058 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.1619 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.1613 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7.1586 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0034 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9967 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9968 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9997 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9999 ms 
- Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 7 ms 
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> BEBE.Framework.Managers.SrcMgr added!
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> BEBE.Framework.Managers.UIMgr added!
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> BEBE.Framework.Managers.NetMgr added!
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> BEBE.Framework.Managers.RoomMgr added!
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> BEBE.Framework.Managers.CommonStatusMgr added!
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UServerService :: RCP_FROM_CLIENT :: EVENT_RCP_FROM_CLIENT
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UServerService :: ON_CLIENT_DISCONNECTING :: EVENT_ON_CLIENT_DISCONNECTING
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UServerService :: PING :: EVENT_PING
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UServerService :: JOIN_IN :: EVENT_JOIN_IN
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UServerService :: CREATE_ROOM :: EVENT_CREATE_ROOM
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UServerService :: EXIT_ROOM :: EVENT_EXIT_ROOM
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UServerService :: GET_READY :: EVENT_GET_READY
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UServerService :: CANCEL_READY :: EVENT_CANCEL_READY
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UServerService :: PLAY :: EVENT_PLAY
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UClientService :: GET_CHANNEL_ID :: EVENT_GET_CHANNEL_ID
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UClientService :: PING_RPC :: EVENT_PING_RPC
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UClientService :: CALL_JOIN_IN_REQUEST_METHOD :: EVENT_CALL_JOIN_IN_REQUEST_METHOD
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UClientService :: HAS_JOINED_ROOM_RPC :: EVENT_HAS_JOINED_ROOM_RPC
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UClientService :: JOIN_IN_RPC :: EVENT_JOIN_IN_RPC
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UClientService :: DONT_FIND_ROOM_RPC :: EVENT_DONT_FIND_ROOM_RPC
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UClientService :: CALL_CREATE_ROOM_REQUEST_METHOD :: EVENT_CALL_CREATE_ROOM_REQUEST_METHOD
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UClientService :: CREATE_ROOM_RPC :: EVENT_CREATE_ROOM_RPC
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UClientService :: UPDATE_ROOM_RPC :: EVENT_UPDATE_ROOM_RPC
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UClientService :: CALL_EXIT_ROOM_METHOD :: EVENT_CALL_EXIT_ROOM_METHOD
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UClientService :: EXIT_ROOM_RPC :: EVENT_EXIT_ROOM_RPC
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UClientService :: CALL_GET_READY_METHOD :: EVENT_CALL_GET_READY_METHOD
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UClientService :: CALL_CANCEL_READY_METHOD :: EVENT_CALL_CANCEL_READY_METHOD
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UClientService :: CALL_PLAY_METHOD :: EVENT_CALL_PLAY_METHOD
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UClientService :: ROOM_IS_NOT_FULL_RPC :: EVENT_ROOM_IS_NOT_FULL_RPC
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UClientService :: ROOM_NOT_ALL_ARE_READY_RPC :: EVENT_ROOM_NOT_ALL_ARE_READY_RPC
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> UClientService :: PLAY_RPC :: EVENT_PLAY_RPC
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> CreateDelegate --> Game :: ON_GAME_START :: EVENT_ON_GAME_START
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> Enter game
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> SERVER --> accepting a new client 0 ...
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> channel connected !
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> CLIENT :: EVENT_GET_CHANNEL_ID --> Your client id is 0 to server
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> SERVER :: EVENT_RCP_FROM_CLIENT --> rcp from client 0 
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> CLIENT :: clinet 0 ping is 558.858 ms 
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> SERVER --> accepting a new client 1 ...
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> CLIENT :: clinet 0 ping is 10 ms 
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> SERVER :: EVENT_RCP_FROM_CLIENT --> rcp from client 1 
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> SERVER --> accepting a new client 2 ...
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> CLIENT :: clinet 0 ping is 11.9996 ms 
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> SERVER :: EVENT_RCP_FROM_CLIENT --> rcp from client 2 
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> CLIENT :: EVENT_CALL_CREATE_ROOM_REQUEST_METHOD
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> SERVER :: EVENT_CREATE_ROOM 0 1
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> Player 1 joined room 100000
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> CLIENT :: EVENT_CREATE_ROOM_RPC
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100000
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> SERVER :: EVENT_JOIN_IN from client 1 2
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> Player 2 joined room 100000
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100000
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> SERVER :: EVENT_JOIN_IN from client 2 3
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> Player 3 joined room 100000
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100000
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100000
+ Frame Sync Test | 2024/1/8 15:39:12 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100000
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> channel disconnected !
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> channel disconnected !
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> channel disconnected !
+ Frame Sync Test | 2024/1/8 15:39:12 |  Warn --> channel disconnected !
+24/1/8 15:37:15 |  Warn --> channel disconnected !
+ Frame Sync Test | 2024/1/8 15:37:15 |  Warn --> channel disconnected !
+ Frame Sync Test | 2024/1/8 15:37:15 |  Warn --> channel disconnected !
+ Frame Sync Test | 2024/1/8 15:37:15 |  Warn --> channel disconnected !
+-> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100000
+ Frame Sync Test | 2024/1/8 15:24:40 |  Warn --> channel disconnected !
+ Frame Sync Test | 2024/1/8 15:24:40 |  Warn --> channel disconnected !
+ Frame Sync Test | 2024/1/8 15:24:40 |  Warn --> channel disconnected !
+ Frame Sync Test | 2024/1/8 15:24:40 |  Warn --> channel disconnected !
+Sync Test | 2024/1/8 15:00:53 |  Log --> SERVER :: EVENT_JOIN_IN from client 2 3
+ Frame Sync Test | 2024/1/8 15:00:53 |  Log --> Player 3 joined room 100001
+ Frame Sync Test | 2024/1/8 15:00:53 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100001
+ Frame Sync Test | 2024/1/8 15:00:53 |  Log --> SERVER :: EVENT_JOIN_IN from client 1 2
+ Frame Sync Test | 2024/1/8 15:00:53 |  Log --> Player 2 joined room 100001
+ Frame Sync Test | 2024/1/8 15:00:53 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100001
+ Frame Sync Test | 2024/1/8 15:00:53 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100001
+ Frame Sync Test | 2024/1/8 15:00:53 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100001
+ Frame Sync Test | 2024/1/8 15:00:53 |  Warn --> channel disconnected !
+ Frame Sync Test | 2024/1/8 15:00:53 |  Warn --> channel disconnected !
+ Frame Sync Test | 2024/1/8 15:00:53 |  Warn --> channel disconnected !
+ Frame Sync Test | 2024/1/8 15:00:53 |  Warn --> channel disconnected !
+ource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0007b] in <39d6421ea91449339eee7ef41a176a38>:0 
+  at BEBE.Framework.Managers.RoomMgr.FindRoom (BEBE.Framework.Service.Net.USession session, System.String player_id) [0x0001f] in C:\MyDocument\work\Document\Unity\Project\BattleTanks\Assets\Scripts\Framework\Managers\RoomMgr.cs:67 
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 2 3
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> Player 3 joined room 100001
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100001
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 1 2
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> Player 2 joined room 100001
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100001
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100001
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100001
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 2 3
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> Player 3 joined room 100001
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100001
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 1 2
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> Player 2 joined room 100001
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100001
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100001
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100001
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_CALL_CREATE_ROOM_REQUEST_METHOD
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_CREATE_ROOM 0 1
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> Player 1 joined room 100002
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_CREATE_ROOM_RPC
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100002
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 2 3
+ Frame Sync Test | 2024/1/8 14:49:40 |  Exception --> System.InvalidOperationException: Sequence contains more than one element
+  at System.Linq.Enumerable.SingleOrDefault[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0007b] in <39d6421ea91449339eee7ef41a176a38>:0 
+  at BEBE.Framework.Managers.RoomMgr.FindRoom (BEBE.Framework.Service.Net.USession session, System.String player_id) [0x0001f] in C:\MyDocument\work\Document\Unity\Project\BattleTanks\Assets\Scripts\Framework\Managers\RoomMgr.cs:67 
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 2 3
+ Frame Sync Test | 2024/1/8 14:49:40 |  Exception --> System.InvalidOperationException: Sequence contains more than one element
+  at System.Linq.Enumerable.SingleOrDefault[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0007b] in <39d6421ea91449339eee7ef41a176a38>:0 
+  at BEBE.Framework.Managers.RoomMgr.FindRoom (BEBE.Framework.Service.Net.USession session, System.String player_id) [0x0001f] in C:\MyDocument\work\Document\Unity\Project\BattleTanks\Assets\Scripts\Framework\Managers\RoomMgr.cs:67 
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 1 2
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> Player 2 joined room 100002
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100002
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 2 3
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> Player 3 joined room 100002
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100002
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100002
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100002
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_CALL_CREATE_ROOM_REQUEST_METHOD
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_CREATE_ROOM 0 1
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> Player 1 joined room 100003
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_CREATE_ROOM_RPC
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100003
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 2 3
+ Frame Sync Test | 2024/1/8 14:49:40 |  Exception --> System.InvalidOperationException: Sequence contains more than one element
+  at System.Linq.Enumerable.SingleOrDefault[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0007b] in <39d6421ea91449339eee7ef41a176a38>:0 
+  at BEBE.Framework.Managers.RoomMgr.FindRoom (BEBE.Framework.Service.Net.USession session, System.String player_id) [0x0001f] in C:\MyDocument\work\Document\Unity\Project\BattleTanks\Assets\Scripts\Framework\Managers\RoomMgr.cs:67 
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 1 2
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> Player 2 joined room 100003
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100003
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 2 3
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> Player 3 joined room 100003
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100003
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100003
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100003
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 1 2
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> Player 2 joined room 100003
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100003
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100003
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 2 3
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> Player 3 joined room 100003
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100003
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100003
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_CALL_JOIN_IN_REQUEST_METHOD
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 0 1
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> Player 1 joined room 100003
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_JOIN_IN_RPC
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100003
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100003
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100003
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_CALL_CREATE_ROOM_REQUEST_METHOD
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_CREATE_ROOM 0 1
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> Player 1 joined room 100004
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_CREATE_ROOM_RPC
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100004
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 2 3
+ Frame Sync Test | 2024/1/8 14:49:40 |  Exception --> System.InvalidOperationException: Sequence contains more than one element
+  at System.Linq.Enumerable.SingleOrDefault[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0007b] in <39d6421ea91449339eee7ef41a176a38>:0 
+  at BEBE.Framework.Managers.RoomMgr.FindRoom (BEBE.Framework.Service.Net.USession session, System.String player_id) [0x0001f] in C:\MyDocument\work\Document\Unity\Project\BattleTanks\Assets\Scripts\Framework\Managers\RoomMgr.cs:67 
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 2 3
+ Frame Sync Test | 2024/1/8 14:49:40 |  Exception --> System.InvalidOperationException: Sequence contains more than one element
+  at System.Linq.Enumerable.SingleOrDefault[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0007b] in <39d6421ea91449339eee7ef41a176a38>:0 
+  at BEBE.Framework.Managers.RoomMgr.FindRoom (BEBE.Framework.Service.Net.USession session, System.String player_id) [0x0001f] in C:\MyDocument\work\Document\Unity\Project\BattleTanks\Assets\Scripts\Framework\Managers\RoomMgr.cs:67 
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_CREATE_ROOM 1 2
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> Player 2 joined room 100005
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 2 3
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> Player 3 joined room 100005
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_CALL_JOIN_IN_REQUEST_METHOD
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 0 1
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> Player 1 joined room 100005
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_JOIN_IN_RPC
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100005
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100005
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100005
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100005
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_CREATE_ROOM 1 2
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> Player 2 joined room 100006
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100005
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_CALL_JOIN_IN_REQUEST_METHOD
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 0 1
+ Frame Sync Test | 2024/1/8 14:49:40 |  Exception --> System.InvalidOperationException: Sequence contains more than one element
+  at System.Linq.Enumerable.SingleOrDefault[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0007b] in <39d6421ea91449339eee7ef41a176a38>:0 
+  at BEBE.Framework.Managers.RoomMgr.FindRoom (BEBE.Framework.Service.Net.USession session, System.String player_id) [0x0001f] in C:\MyDocument\work\Document\Unity\Project\BattleTanks\Assets\Scripts\Framework\Managers\RoomMgr.cs:67 
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_DONT_FIND_ROOM_RPC
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_CALL_JOIN_IN_REQUEST_METHOD
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 0 1
+ Frame Sync Test | 2024/1/8 14:49:40 |  Exception --> System.InvalidOperationException: Sequence contains more than one element
+  at System.Linq.Enumerable.SingleOrDefault[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0007b] in <39d6421ea91449339eee7ef41a176a38>:0 
+  at BEBE.Framework.Managers.RoomMgr.FindRoom (BEBE.Framework.Service.Net.USession session, System.String player_id) [0x0001f] in C:\MyDocument\work\Document\Unity\Project\BattleTanks\Assets\Scripts\Framework\Managers\RoomMgr.cs:67 
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_DONT_FIND_ROOM_RPC
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_CALL_JOIN_IN_REQUEST_METHOD
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 0 1
+ Frame Sync Test | 2024/1/8 14:49:40 |  Exception --> System.InvalidOperationException: Sequence contains more than one element
+  at System.Linq.Enumerable.SingleOrDefault[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0007b] in <39d6421ea91449339eee7ef41a176a38>:0 
+  at BEBE.Framework.Managers.RoomMgr.FindRoom (BEBE.Framework.Service.Net.USession session, System.String player_id) [0x0001f] in C:\MyDocument\work\Document\Unity\Project\BattleTanks\Assets\Scripts\Framework\Managers\RoomMgr.cs:67 
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_DONT_FIND_ROOM_RPC
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_CALL_JOIN_IN_REQUEST_METHOD
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> SERVER :: EVENT_JOIN_IN from client 0 1
+ Frame Sync Test | 2024/1/8 14:49:40 |  Exception --> System.InvalidOperationException: Sequence contains more than one element
+  at System.Linq.Enumerable.SingleOrDefault[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0007b] in <39d6421ea91449339eee7ef41a176a38>:0 
+  at BEBE.Framework.Managers.RoomMgr.FindRoom (BEBE.Framework.Service.Net.USession session, System.String player_id) [0x0001f] in C:\MyDocument\work\Document\Unity\Project\BattleTanks\Assets\Scripts\Framework\Managers\RoomMgr.cs:67 
+ Frame Sync Test | 2024/1/8 14:49:40 |  Log --> CLIENT :: EVENT_DONT_FIND_ROOM_RPC
+ Frame Sync Test | 2024/1/8 14:49:40 |  Warn --> channel disconnected !
+ Frame Sync Test | 2024/1/8 14:49:40 |  Warn --> channel disconnected !
+ Frame Sync Test | 2024/1/8 14:49:40 |  Warn --> channel disconnected !
+ Frame Sync Test | 2024/1/8 14:49:40 |  Warn --> channel disconnected !
+ 2024/1/3 15:05:07 |  Log --> tick 304
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 305
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 306
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 307
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 308
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 309
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 310
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 311
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 312
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 313
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 314
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 315
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 316
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 317
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 318
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> CLIENT :: clinet 0 ping is 1 ms 
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 319
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 320
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 321
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 322
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 323
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 324
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 325
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 326
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 327
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 328
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 329
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 330
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 331
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 332
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 333
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 334
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 335
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 336
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 337
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 338
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 339
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 340
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 341
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 342
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 343
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 344
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 345
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 346
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 347
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 348
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 349
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> CLIENT :: clinet 0 ping is 0.9999 ms 
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 350
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 351
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 352
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 353
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 354
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 355
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 356
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 357
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 358
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 359
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 360
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 361
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 362
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 363
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 364
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 365
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 366
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 367
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 368
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 369
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 370
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 371
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 372
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 373
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 374
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 375
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 376
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 377
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 378
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 379
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> CLIENT :: clinet 0 ping is 1.539 ms 
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 380
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 381
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 382
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 383
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 384
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 385
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 386
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 387
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 388
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 389
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 390
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 391
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 392
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 393
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 394
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 395
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 396
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 397
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 398
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 399
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 400
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 401
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 402
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 403
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 404
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 405
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 406
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 407
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 408
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 409
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> CLIENT :: clinet 0 ping is 0.9993 ms 
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 410
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 411
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 412
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 413
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 414
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 415
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 416
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 417
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 418
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 419
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 420
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 421
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 422
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 423
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 424
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 425
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 426
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 427
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 428
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 429
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 430
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 431
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 432
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 433
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 434
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 435
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 436
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 437
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 438
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 439
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> CLIENT :: clinet 0 ping is 2 ms 
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 440
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 441
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 442
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 443
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 444
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 445
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 446
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 447
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 448
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 449
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 450
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 451
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 452
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 453
+ Frame Sync Test | 2024/1/3 15:05:07 |  Log --> tick 454
+ Frame Sync Test | 2024/1/3 15:05:07 |  Warn --> channel disconnected !
+ Frame Sync Test | 2024/1/3 15:05:07 |  Warn --> channel disconnected !
+> clinet 0 ping is 7 ms 
  Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.9971 ms 
  Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 5.9998 ms 
  Frame Sync Test | 2023/12/29 16:31:49 |  Log --> clinet 0 ping is 6.0032 ms 

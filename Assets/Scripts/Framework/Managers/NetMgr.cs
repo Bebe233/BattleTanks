@@ -1,4 +1,5 @@
 using BEBE.Engine.Service.Net;
+using BEBE.Framework.Service.Net;
 
 namespace BEBE.Framework.Managers
 {
@@ -7,23 +8,25 @@ namespace BEBE.Framework.Managers
     //服务端实例化 net_server
     public class NetMgr : IMgr
     {
-        private TCPServerService m_Server;
-        public TCPServerService Server => m_Server;
-        private TCPClientService m_client;
-        public TCPClientService Client => m_client;
+        private UServerService m_Server;
+        public UServerService Server => m_Server;
+        private UClientService m_client;
+        public UClientService Client => m_client;
         private const int clients_num = 1;
         private const string ip = "127.0.0.1";
         private const int port = 9600;
         public override void Awake()
         {
-            m_Server = new TCPServerService(ip, port);
-            m_client = new TCPClientService();
+#if UNITY_EDITOR
+            m_Server = new UServerService(ip, port);
+#endif
+            m_client = new UClientService(ip, port);
         }
 
         public override void Start()
         {
             m_Server?.StartListening();
-            m_client?.Connect(ip, port);
+            m_client?.Connect();
         }
 
         public override void Update()

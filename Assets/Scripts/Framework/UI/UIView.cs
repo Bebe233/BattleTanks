@@ -22,6 +22,8 @@ namespace BEBE.Framework.UI
             }
         }
 
+        protected CanvasGroup _canvas_group;
+
         protected virtual void Awake()
         {
             //利用反射，查找标记有location特性的子类成员变量的路径并赋值
@@ -34,6 +36,13 @@ namespace BEBE.Framework.UI
                 if (loc == null) continue;
                 type.GetField(members[i].Name).SetValue(this, loc.Locate());
             }
+            //UI交互管理
+            _canvas_group = gameObject.AddComponent<CanvasGroup>(); 
+        }
+
+        public void SetInteractable(bool isOn)
+        {
+            _canvas_group.interactable = isOn;
         }
 
     }

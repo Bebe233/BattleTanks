@@ -1,11 +1,14 @@
 using System.Collections.Generic;
-using BEBE.Engine.Event;
+using BEBE.Framework.Event;
 using BEBE.Engine.Math;
 using BEBE.Engine.Service.Cmd;
 using BEBE.Engine.Service.Net;
 using BEBE.Framework.Component;
 using BEBE.Framework.Managers;
+using BEBE.Framework.Service.Net;
 using UnityEngine;
+using BEBE.Framework.Service.Net.Msg;
+using BEBE.Framework.Module;
 
 namespace BEBE.Framework.Service
 {
@@ -14,7 +17,7 @@ namespace BEBE.Framework.Service
         private byte actorId; // 范围 1 ~ 10号位
         public ClientCmdService(NetworkService netService) : base(netService)
         {
-            
+
         }
 
         public int tick_sync = -1;//同步的帧数
@@ -71,7 +74,7 @@ namespace BEBE.Framework.Service
 
         protected void send_cmd()
         {
-            m_netservice.Send(new Packet(new EventMsg(EventCode.ON_RECV_INPUT, m_inputs2send.GetBytes(), ((TCPClientService)m_netservice).Id)));
+            m_netservice.Send(new EventPacket(new EventMsg(EventCode.ON_RECV_INPUT, m_inputs2send.GetBytes(), ((ClientService)m_netservice).Id)));
         }
 
         private void sync_cmd(PlayerInputs inputs)
@@ -130,12 +133,15 @@ namespace BEBE.Framework.Service
             int id = msg.Id;
 
             PlayerInputs p_inputs = new PlayerInputs();
-            p_inputs.DecodeBytes(msg.Content);
+            p_inputs.PutBytes(msg.Content);
 
             sync_cmd(p_inputs);
         }
 
-
+        protected override void register_events()
+        {
+            Dispatchor.Register(this, Constant.EVENT_PREFIX);
+        }
     }
 
     public class ServerCmdService : CmdService
@@ -149,7 +155,11 @@ namespace BEBE.Framework.Service
         {
 
         }
-
+        protected override void register_events()
+        {
+            Dispatchor.Register(this, Constant.EVENT_PREFIX);
+        }
+        
         protected void EVENT_ON_RECV_INPUT(object param)
         {
             // BEBE.Engine.Logging.Debug.Log("EVENT_ON_RECV_INPUT");
@@ -157,11 +167,11 @@ namespace BEBE.Framework.Service
             int id = msg.Id;
 
             PlayerInputs p_inputs = new PlayerInputs();
-            p_inputs.DecodeBytes(msg.Content);
+            p_inputs.PutBytes(msg.Content);
 
             // BEBE.Engine.Logging.Debug.Log(p_inputs.ToString());
 
-            m_netservice.Send(new Packet(new EventMsg(EventCode.ON_SYNC_CMD, msg.Content)));
+            m_netservice.Send(new EventPacket(new EventMsg(EventCode.ON_SYNC_CMD, msg.Content)));
             //如果收到所有的cmds ,分发给client
             // m_inputs.put(id, msg.Content);
             //并清空dict

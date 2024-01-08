@@ -2,11 +2,17 @@ namespace BEBE.Engine.Service.Net.Utils
 {
     public class IdGenerator
     {
-        private static int id = -1;
 
-        public static int Get()
+        public IdGenerator(int start_num = 0)
         {
-            return ++id;
+            id = start_num;
+        }
+
+        private int id;
+
+        public int Get()
+        {
+            return id++;
         }
     }
 }

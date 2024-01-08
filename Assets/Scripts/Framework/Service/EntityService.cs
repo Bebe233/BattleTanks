@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Collections.Concurrent;
 using UnityEngine;
+using BEBE.Framework.Event;
+using BEBE.Framework.Module;
 
 namespace BEBE.Framework.Service
 {
@@ -27,20 +29,20 @@ namespace BEBE.Framework.Service
     {
         public override void CreateEntity(int id, string entity_name)
         {
-            //Instantiate Entity
-            // step 1 -> load info TODO
-            
-            // step 2 -> load prefab
-            var prefab = srcMgr.GetPrefabAsset(entity_name);
-            // step 3 -> instantiate gameobject
-            var obj = GameObject.Instantiate(prefab);
-            obj.name = new DirectoryInfo(entity_name).Name;
-            // step 4 -> add entity
-            var entity = obj.AddComponent<PlayerEntity>();
-            // step 5 -> init status TODO
-            entity.Id = id;
-            // step 6 -> add to list
-            entities.TryAdd(id, entity);
+            // //Instantiate Entity
+            // // step 1 -> load info TODO
+
+            // // step 2 -> load prefab
+            // var prefab = srcMgr.GetPrefabAsset(entity_name);
+            // // step 3 -> instantiate gameobject
+            // var obj = GameObject.Instantiate(prefab);
+            // obj.name = new DirectoryInfo(entity_name).Name;
+            // // step 4 -> add entity
+            // var entity = obj.AddComponent<PlayerEntity>();
+            // // step 5 -> init status TODO
+            // entity.Id = id;
+            // // step 6 -> add to list
+            // entities.TryAdd(id, entity);
         }
         public override bool TryGetEntity(int id, out Entity entity)
         {
@@ -98,6 +100,11 @@ namespace BEBE.Framework.Service
                     input.executed = true;
                 }
             }
+        }
+
+        protected override void register_events()
+        {
+            Dispatchor.Register(this, Constant.EVENT_PREFIX);
         }
     }
 }

@@ -17,22 +17,22 @@ namespace BEBE.Framework.Component
             return buf.Data;
         }
 
-        public override void DecodeBytes(byte[] bytes)
+        public override void PutBytes(byte[] bytes)
         {
             ByteBuf buf = new ByteBuf(bytes);
             Deserialize(buf);
         }
 
-        public override void Deserialize(ByteBuf buffer, bool resetReadIndex = true)
+        public override void Deserialize(ByteBuf buffer)
         {
-            base.Deserialize(buffer, resetReadIndex);
+            base.Deserialize(buffer);
             x = buffer.ReadLFloat();
             y = buffer.ReadLFloat();
         }
 
-        public override void Serialize(ref ByteBuf buffer, bool resetWriteIndex = true)
+        public override void Serialize(ref ByteBuf buffer)
         {
-            base.Serialize(ref buffer, resetWriteIndex);
+            base.Serialize(ref buffer);
             buffer.WriteLFloat(x);
             buffer.WriteLFloat(y);
         }
@@ -52,19 +52,19 @@ namespace BEBE.Framework.Component
         public byte actorId;
         public bool executed = false; //标记是否被entity执行
 
-        public override void Serialize(ref ByteBuf buffer, bool resetWriteIndex = true)
+        public override void Serialize(ref ByteBuf buffer)
         {
-            base.Serialize(ref buffer, resetWriteIndex);
+            base.Serialize(ref buffer);
             buffer.WriteByte(actorId);
         }
 
-        public override void Deserialize(ByteBuf buffer, bool resetReadIndex = true)
+        public override void Deserialize(ByteBuf buffer)
         {
-            base.Deserialize(buffer, resetReadIndex);
+            base.Deserialize(buffer);
             actorId = buffer.ReadByte();
         }
 
-        public override void DecodeBytes(byte[] bytes)
+        public override void PutBytes(byte[] bytes)
         {
             ByteBuf buf = new ByteBuf(bytes);
             Deserialize(buf);
@@ -137,25 +137,25 @@ namespace BEBE.Framework.Component
             return playerInputs.Remove(tick);
         }
 
-        public override void Deserialize(ByteBuf buffer, bool resetReadIndex = true)
+        public override void Deserialize(ByteBuf buffer)
         {
-            base.Deserialize(buffer, resetReadIndex);
+            base.Deserialize(buffer);
             int num = buffer.ReadInt();
             for (int i = 0; i < num; i++)
             {
                 PlayerInput input = new PlayerInput();
-                input.Deserialize(buffer, false);
+                input.Deserialize(buffer);
                 put(input);
             }
         }
 
-        public override void Serialize(ref ByteBuf buffer, bool resetWriteIndex = true)
+        public override void Serialize(ref ByteBuf buffer)
         {
-            base.Serialize(ref buffer, resetWriteIndex);
+            base.Serialize(ref buffer);
             buffer.WriteInt(playerInputs.Count);
             foreach (var pInput in playerInputs.Values)
             {
-                pInput.Serialize(ref buffer, false);
+                pInput.Serialize(ref buffer);
             }
         }
 
@@ -167,7 +167,7 @@ namespace BEBE.Framework.Component
             return buf.Data;
         }
 
-        public override void DecodeBytes(byte[] bytes)
+        public override void PutBytes(byte[] bytes)
         {
             ByteBuf buf = new ByteBuf(bytes);
             Deserialize(buf);
@@ -210,7 +210,7 @@ namespace BEBE.Framework.Component
         //         return false;
         // }
 
-        public override void DecodeBytes(byte[] bytes)
+        public override void PutBytes(byte[] bytes)
         {
 
         }

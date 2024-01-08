@@ -1,19 +1,127 @@
+using System;
+using System.Linq;
 using System.Collections.Concurrent;
 using BEBE.Engine.Service.Net;
-
+using BEBE.Engine.Service.Net.Utils;
+using BEBE.Engine.Logging;
+using BEBE.Framework.Service.Net.Msg;
+using BEBE.Framework.Event;
+using BEBE.Framework.Service.Net;
 namespace BEBE.Framework.Managers
 {
+    //房间管理类
+    //响应客户端的请求，并分配房间
     public class RoomMgr : IMgr
     {
-        ConcurrentDictionary<int, Room> rooms = new ConcurrentDictionary<int, Room>();
-        
+        private ConcurrentDictionary<int, Room> id2room = new ConcurrentDictionary<int, Room>();
+        private IdGenerator id_gen = new IdGenerator(100000);
 
-        protected void EVENT_ON_JOIN_REQUEST_RECV(object param)
+
+
+        internal void CreateRoom(USession session, string player_id)
         {
-            EventMsg msg = (EventMsg)param;
-            BEBE.Engine.Logging.Debug.Log($"EVENT_ON_JOIN_REQUEST_RECV --> client {msg.Id}");
-            //判断是否有Room
+            //判断是否已经在房间中
+            if (session.HasJoinedRoom)
+            {
+                session.Send(new EventPacket(new EventMsg(EventCode.HAS_JOINED_ROOM_RPC)));
+                return;
+            }
+            //随机分配一个room的id
+            int id_room = id_gen.Get();
+            Room room = new Room(id_room, 3);
+            id2room[id_room] = room;
+            session.IsHost = true;
+            session.IsReady = true;
+            room.Join(session, player_id);
+            session.Send(new EventPacket(new EventMsg(EventCode.CREATE_ROOM_RPC)));
+            //broadcast 刷新room
+            room.Broadcast(new EventPacket(new EventMsg(EventCode.UPDATE_ROOM_RPC, room.GetRoomInfo(), -1)));
+        }
 
+        internal void ExitRoom(USession uSession)
+        {
+            if (!uSession.HasJoinedRoom) return;
+            if (!uSession.IsHost && uSession.IsReady) return;
+            //get room
+            if (id2room.TryGetValue(uSession.RoomId, out Room room))
+            {
+                room.Exit(uSession.PlayerId);
+                //检测room 是否还有玩家，没有就删除room
+                if (room.IsEmpty)
+                {
+                    id2room.TryRemove(room.Id, out Room value);
+                }
+            }
+        }
+
+        internal void FindRoom(USession session, string player_id)
+        {
+            try
+            {
+                //判断是否已经在房间中
+                if (session.HasJoinedRoom)
+                {
+                    session.Send(new EventPacket(new EventMsg(EventCode.HAS_JOINED_ROOM_RPC)));
+                    return;
+                }
+                var room_pair = id2room.Where(room => !room.Value.IsFull).First();
+                room_pair.Value.Join(session, player_id);
+                session.Send(new EventPacket(new EventMsg(EventCode.JOIN_IN_RPC)));
+                room_pair.Value.Broadcast(new EventPacket(new EventMsg(EventCode.UPDATE_ROOM_RPC, room_pair.Value.GetRoomInfo(), -1)));
+            }
+            catch (Exception)
+            {
+                // Debug.LogException(e);
+                //回应客户端，没有找到房间
+                session.Send(new EventPacket(new EventMsg(EventCode.DONT_FIND_ROOM_RPC)));
+            }
+        }
+
+        internal void GetReady(USession uSession)
+        {
+            if (!uSession.IsReady)
+            {
+                uSession.IsReady = true;
+                //broadcast 刷新room
+                if (id2room.TryGetValue(uSession.RoomId, out Room room))
+                    room.Broadcast(new EventPacket(new EventMsg(EventCode.UPDATE_ROOM_RPC, room.GetRoomInfo(), -1)));
+            }
+        }
+
+        internal void CancelReady(USession uSession)
+        {
+            if (uSession.IsReady)
+            {
+                uSession.IsReady = false;
+                //broadcast 刷新room
+                if (id2room.TryGetValue(uSession.RoomId, out Room room))
+                    room.Broadcast(new EventPacket(new EventMsg(EventCode.UPDATE_ROOM_RPC, room.GetRoomInfo(), -1)));
+            }
+        }
+
+        internal void Play(USession uSession)
+        {
+            if (id2room.TryGetValue(uSession.RoomId, out Room room))
+            {
+                if (room.IsFull)
+                {
+                    //确认所有人都准备好了
+                    if (room.AreAllReady)
+                    {
+                        //开始游戏
+                        room.Broadcast(new EventPacket(new EventMsg(EventCode.PLAY_RPC, room.GetRoomInfo(), -1)));
+                    }
+                    else
+                    {
+                        uSession.Send(new EventPacket(new EventMsg(EventCode.ROOM_NOT_ALL_ARE_READY_RPC)));
+                    }
+
+                }
+                else
+                {
+                    uSession.Send(new EventPacket(new EventMsg(EventCode.ROOM_IS_NOT_FULL_RPC)));
+                }
+            }
         }
     }
 }
