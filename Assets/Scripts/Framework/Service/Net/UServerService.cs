@@ -105,5 +105,21 @@ namespace BEBE.Framework.Service.Net
             int channel_id = msg.Id;
             MgrsContainer.GetMgr<RoomMgr>().Play((USession)m_sessions[channel_id]);
         }
+
+        private void EVENT_SYNC_LOAD_PROGRESS(object param)
+        {
+            EventMsg msg = (EventMsg)param;
+            int channel_id = msg.Id;
+            ByteBuf buf = new ByteBuf(msg.Content);
+            var progress = buf.ReadLFloat();
+            MgrsContainer.GetMgr<RoomMgr>().SyncLoadProgress((USession)m_sessions[channel_id], progress);
+        }
+
+        private void EVENT_LOADING_COMPLETED(object param)
+        {
+            EventMsg msg = (EventMsg)param;
+            int channel_id = msg.Id;
+            MgrsContainer.GetMgr<RoomMgr>().LoadingCompleted((USession)m_sessions[channel_id]);
+        }
     }
 }

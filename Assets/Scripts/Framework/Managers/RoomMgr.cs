@@ -16,8 +16,6 @@ namespace BEBE.Framework.Managers
         private ConcurrentDictionary<int, Room> id2room = new ConcurrentDictionary<int, Room>();
         private IdGenerator id_gen = new IdGenerator(100000);
 
-
-
         internal void CreateRoom(USession session, string player_id)
         {
             //判断是否已经在房间中
@@ -120,6 +118,27 @@ namespace BEBE.Framework.Managers
                 else
                 {
                     uSession.Send(new EventPacket(new EventMsg(EventCode.ROOM_IS_NOT_FULL_RPC)));
+                }
+            }
+        }
+
+        internal void SyncLoadProgress(USession uSession, Engine.Math.LFloat progress)
+        {
+            uSession.LoadingProgress = progress;
+            if (id2room.TryGetValue(uSession.RoomId, out Room room))
+            {
+                room.Broadcast(new EventPacket(new EventMsg(EventCode.SYNC_LOAD_PROGRESS_RPC, room.GetLoadingProgress(), -1)));
+            }
+        }
+
+        internal void LoadingCompleted(USession uSession)
+        {
+            uSession.IsLoadingCompleted = true;
+            if (id2room.TryGetValue(uSession.RoomId, out Room room))
+            {
+                if (room.AreAllLoadingCompleted)
+                {
+                    room.Broadcast(new EventPacket(new EventMsg(EventCode.LOADING_COMPLETED_RPC)));
                 }
             }
         }

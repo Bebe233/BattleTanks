@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1446516768
+CRC: 2442231466
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 144ab51fae0cb0e919cce4df5dea4589
+    Hash: bd845dc68a373d9e79b1a48207c73943
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 66130ba82eda249e90aca458d03169da
+    Hash: 83a6e860eca2c86c1f4d80659ddc366d
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -29,6 +29,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
 - Class: 114
@@ -97,9 +99,12 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.Navigation
 - AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Slider/SliderEvent
+- AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.SpriteState
 Assets:
 - Assets/AssetsPackage/prefabs/ui/Room.prefab
 - Assets/AssetsPackage/prefabs/ui/GameStart.prefab
+- Assets/AssetsPackage/prefabs/ui/Loading.prefab
 - Assets/AssetsPackage/prefabs/ui/Alert.prefab
 Dependencies: []

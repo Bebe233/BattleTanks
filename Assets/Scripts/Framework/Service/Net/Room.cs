@@ -20,6 +20,7 @@ namespace BEBE.Framework.Service.Net
         public bool IsFull => sessions.Count >= capicity;
         public bool IsEmpty => sessions.Count == 0;
         public bool AreAllReady => !sessions.Any(pair => pair.Value.IsReady == false);
+        public bool AreAllLoadingCompleted => !sessions.Any(pair => pair.Value.IsLoadingCompleted == false);
         public Room()
         {
 

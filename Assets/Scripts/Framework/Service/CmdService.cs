@@ -22,7 +22,7 @@ namespace BEBE.Framework.Service
 
         public int tick_sync = -1;//同步的帧数
         private FrameMgr frameMgr => MgrsContainer.GetMgr<FrameMgr>();
-        PlayerInputs m_inputs2send = new PlayerInputs();
+        PlayerInputs m_inputs_send = new PlayerInputs();
         PlayerInputs m_inputs_local = new PlayerInputs();
         public PlayerInputs Inputs => m_inputs_local;
         Queue<PlayerInput> m_inputs_rollback = new Queue<PlayerInput>();
@@ -36,12 +36,12 @@ namespace BEBE.Framework.Service
             float y = Input.GetAxisRaw("Vertical");
             //装载
             PlayerInput input_tick = new PlayerInput();
-            m_inputs_local.tick = m_inputs2send.tick = input_tick.tick = frameMgr.Tick;
+            m_inputs_local.tick = m_inputs_send.tick = input_tick.tick = frameMgr.Tick;
             input_tick.actorId = actorId;
             input_tick.x = x.ToLFloat();
             input_tick.y = y.ToLFloat();
             m_inputs_local.put(input_tick);
-            if (m_inputs2send.put(input_tick))
+            if (m_inputs_send.put(input_tick))
                 send_cmd();
         }
 
@@ -74,7 +74,7 @@ namespace BEBE.Framework.Service
 
         protected void send_cmd()
         {
-            m_netservice.Send(new EventPacket(new EventMsg(EventCode.ON_RECV_INPUT, m_inputs2send.GetBytes(), ((ClientService)m_netservice).Id)));
+            m_netservice.Send(new EventPacket(new EventMsg(EventCode.ON_RECV_INPUT, m_inputs_send.GetBytes(), ((ClientService)m_netservice).Id)));
         }
 
         private void sync_cmd(PlayerInputs inputs)
@@ -122,7 +122,7 @@ namespace BEBE.Framework.Service
                         }
                     }
                 }
-                m_inputs2send.delete(input.tick);
+                m_inputs_send.delete(input.tick);
             }
         }
 
@@ -137,11 +137,6 @@ namespace BEBE.Framework.Service
 
             sync_cmd(p_inputs);
         }
-
-        protected override void register_events()
-        {
-            Dispatchor.Register(this, Constant.EVENT_PREFIX);
-        }
     }
 
     public class ServerCmdService : CmdService
@@ -155,11 +150,7 @@ namespace BEBE.Framework.Service
         {
 
         }
-        protected override void register_events()
-        {
-            Dispatchor.Register(this, Constant.EVENT_PREFIX);
-        }
-        
+
         protected void EVENT_ON_RECV_INPUT(object param)
         {
             // BEBE.Engine.Logging.Debug.Log("EVENT_ON_RECV_INPUT");

@@ -17,6 +17,7 @@ public class GameLaucher : SingletonGameobject<GameLaucher>
         MgrsContainer.AddMgr<NetMgr>();
         MgrsContainer.AddMgr<RoomMgr>();
         MgrsContainer.AddMgr<CommonStatusMgr>();
+        MgrsContainer.AddMgr<SceneMgr>();
         MgrsContainer.Awake();
     }
 

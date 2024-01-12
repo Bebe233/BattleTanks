@@ -10,6 +10,7 @@ namespace BEBE.Framework.Service.Net
         public int RoomId { get; set; }
         public string PlayerId { get; set; }
         public LFloat LoadingProgress { get; set; }
+        public bool IsLoadingCompleted { get; set; }
         public USession(Channel channel) : base(channel)
         {
         }
