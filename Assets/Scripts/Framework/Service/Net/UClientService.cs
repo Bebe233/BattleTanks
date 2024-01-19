@@ -116,8 +116,6 @@ namespace BEBE.Framework.Service.Net
             Debug.Log($"CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID {id_room}");
         }
 
-
-
         protected void EVENT_CALL_EXIT_ROOM_METHOD(object param)
         {
             m_channel?.Send(new EventPacket(new EventMsg(EventCode.EXIT_ROOM, m_channel.Id)));
@@ -158,12 +156,12 @@ namespace BEBE.Framework.Service.Net
         protected void EVENT_PLAY_RPC(object param)
         {
             //退出RoomUIView
-            ui.UnloadCanvasUI<RoomUIView>();
-            ui.UnloadCanvasUI<GameStartUIView>();
+            ui.UnloadAll();
             //进入加载UIView
             ui.LoadCanvasUI<LoadingUIView>();
             //加载场景、角色、输入管理等服务
-            MgrsContainer.GetMgr<SceneMgr>().LoadNecessaryAssets();
+            EventMsg msg = (EventMsg)param;
+            MgrsContainer.GetMgr<SceneMgr>().LoadNecessaryAssets(msg);
         }
 
         protected void EVENT_CALL_SYNC_LOAD_PROGRESS_METHOD(object param)

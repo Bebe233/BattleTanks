@@ -9,8 +9,6 @@ using BEBE.Engine.Math;
 [PrefabLocation("ui/Loading")]
 public class LoadingUIView : UIView
 {
-
-
     [Location("Canvas/Loading/Grid")]
     public GameObject Grid;
     [SerializeField]

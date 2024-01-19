@@ -1,73 +1,72 @@
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> BEBE.Framework.Managers.SrcMgr added!
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> BEBE.Framework.Managers.UIMgr added!
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> BEBE.Framework.Managers.NetMgr added!
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> BEBE.Framework.Managers.RoomMgr added!
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> BEBE.Framework.Managers.CommonStatusMgr added!
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> BEBE.Framework.Managers.SceneMgr added!
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UServerService :: RCP_FROM_CLIENT :: EVENT_RCP_FROM_CLIENT
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UServerService :: ON_CLIENT_DISCONNECTING :: EVENT_ON_CLIENT_DISCONNECTING
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UServerService :: PING :: EVENT_PING
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UServerService :: JOIN_IN :: EVENT_JOIN_IN
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UServerService :: CREATE_ROOM :: EVENT_CREATE_ROOM
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UServerService :: EXIT_ROOM :: EVENT_EXIT_ROOM
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UServerService :: GET_READY :: EVENT_GET_READY
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UServerService :: CANCEL_READY :: EVENT_CANCEL_READY
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UServerService :: PLAY :: EVENT_PLAY
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UServerService :: SYNC_LOAD_PROGRESS :: EVENT_SYNC_LOAD_PROGRESS
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UServerService :: LOADING_COMPLETED :: EVENT_LOADING_COMPLETED
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UClientService :: GET_CHANNEL_ID :: EVENT_GET_CHANNEL_ID
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UClientService :: PING_RPC :: EVENT_PING_RPC
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UClientService :: CALL_JOIN_IN_REQUEST_METHOD :: EVENT_CALL_JOIN_IN_REQUEST_METHOD
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UClientService :: HAS_JOINED_ROOM_RPC :: EVENT_HAS_JOINED_ROOM_RPC
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UClientService :: JOIN_IN_RPC :: EVENT_JOIN_IN_RPC
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UClientService :: DONT_FIND_ROOM_RPC :: EVENT_DONT_FIND_ROOM_RPC
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UClientService :: CALL_CREATE_ROOM_REQUEST_METHOD :: EVENT_CALL_CREATE_ROOM_REQUEST_METHOD
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UClientService :: CREATE_ROOM_RPC :: EVENT_CREATE_ROOM_RPC
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UClientService :: UPDATE_ROOM_RPC :: EVENT_UPDATE_ROOM_RPC
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UClientService :: CALL_EXIT_ROOM_METHOD :: EVENT_CALL_EXIT_ROOM_METHOD
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UClientService :: EXIT_ROOM_RPC :: EVENT_EXIT_ROOM_RPC
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UClientService :: CALL_GET_READY_METHOD :: EVENT_CALL_GET_READY_METHOD
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UClientService :: CALL_CANCEL_READY_METHOD :: EVENT_CALL_CANCEL_READY_METHOD
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UClientService :: CALL_PLAY_METHOD :: EVENT_CALL_PLAY_METHOD
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UClientService :: ROOM_IS_NOT_FULL_RPC :: EVENT_ROOM_IS_NOT_FULL_RPC
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UClientService :: ROOM_NOT_ALL_ARE_READY_RPC :: EVENT_ROOM_NOT_ALL_ARE_READY_RPC
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UClientService :: PLAY_RPC :: EVENT_PLAY_RPC
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UClientService :: CALL_SYNC_LOAD_PROGRESS_METHOD :: EVENT_CALL_SYNC_LOAD_PROGRESS_METHOD
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UClientService :: SYNC_LOAD_PROGRESS_RPC :: EVENT_SYNC_LOAD_PROGRESS_RPC
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UClientService :: CALL_LOADING_COMPLETED_METHOD :: EVENT_CALL_LOADING_COMPLETED_METHOD
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> UClientService :: LOADING_COMPLETED_RPC :: EVENT_LOADING_COMPLETED_RPC
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> CreateDelegate --> Game :: ON_GAME_START :: EVENT_ON_GAME_START
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> Enter game
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> SERVER --> accepting a new client 0 ...
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> channel connected !
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> CLIENT :: EVENT_GET_CHANNEL_ID --> Your client id is 0 to server
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> SERVER :: EVENT_RCP_FROM_CLIENT --> rcp from client 0 
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> CLIENT :: clinet 0 ping is 559.5554 ms 
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> SERVER --> accepting a new client 1 ...
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> CLIENT :: clinet 0 ping is 10.0006 ms 
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> SERVER :: EVENT_RCP_FROM_CLIENT --> rcp from client 1 
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> CLIENT :: EVENT_CALL_CREATE_ROOM_REQUEST_METHOD
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> SERVER :: EVENT_CREATE_ROOM 0 host
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> Player host joined room 100000
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> CLIENT :: EVENT_CREATE_ROOM_RPC
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100000
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> SERVER --> accepting a new client 2 ...
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> CLIENT :: clinet 0 ping is 9.0002 ms 
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> SERVER :: EVENT_RCP_FROM_CLIENT --> rcp from client 2 
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> SERVER :: EVENT_JOIN_IN from client 1 2
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> Player 2 joined room 100000
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100000
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> SERVER :: EVENT_JOIN_IN from client 2 3
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> Player 3 joined room 100000
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100000
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100000
- Frame Sync Test | 2024/1/9 17:27:02 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100000
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> channel disconnected !
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> channel disconnected !
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> channel disconnected !
- Frame Sync Test | 2024/1/9 17:27:02 |  Warn --> channel disconnected !
- 2
- Frame Sync Test | 2024/1/8 15:00:53 |  Log --> Player 2 joined room 100001
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> BEBE.Framework.Managers.SrcMgr added!
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> BEBE.Framework.Managers.UIMgr added!
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> BEBE.Framework.Managers.NetMgr added!
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> BEBE.Framework.Managers.RoomMgr added!
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> BEBE.Framework.Managers.CommonStatusMgr added!
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> BEBE.Framework.Managers.SceneMgr added!
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UServerService :: RCP_FROM_CLIENT :: EVENT_RCP_FROM_CLIENT
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UServerService :: ON_CLIENT_DISCONNECTING :: EVENT_ON_CLIENT_DISCONNECTING
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UServerService :: PING :: EVENT_PING
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UServerService :: JOIN_IN :: EVENT_JOIN_IN
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UServerService :: CREATE_ROOM :: EVENT_CREATE_ROOM
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UServerService :: EXIT_ROOM :: EVENT_EXIT_ROOM
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UServerService :: GET_READY :: EVENT_GET_READY
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UServerService :: CANCEL_READY :: EVENT_CANCEL_READY
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UServerService :: PLAY :: EVENT_PLAY
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UServerService :: SYNC_LOAD_PROGRESS :: EVENT_SYNC_LOAD_PROGRESS
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UServerService :: LOADING_COMPLETED :: EVENT_LOADING_COMPLETED
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UClientService :: GET_CHANNEL_ID :: EVENT_GET_CHANNEL_ID
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UClientService :: PING_RPC :: EVENT_PING_RPC
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UClientService :: CALL_JOIN_IN_REQUEST_METHOD :: EVENT_CALL_JOIN_IN_REQUEST_METHOD
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UClientService :: HAS_JOINED_ROOM_RPC :: EVENT_HAS_JOINED_ROOM_RPC
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UClientService :: JOIN_IN_RPC :: EVENT_JOIN_IN_RPC
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UClientService :: DONT_FIND_ROOM_RPC :: EVENT_DONT_FIND_ROOM_RPC
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UClientService :: CALL_CREATE_ROOM_REQUEST_METHOD :: EVENT_CALL_CREATE_ROOM_REQUEST_METHOD
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UClientService :: CREATE_ROOM_RPC :: EVENT_CREATE_ROOM_RPC
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UClientService :: UPDATE_ROOM_RPC :: EVENT_UPDATE_ROOM_RPC
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UClientService :: CALL_EXIT_ROOM_METHOD :: EVENT_CALL_EXIT_ROOM_METHOD
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UClientService :: EXIT_ROOM_RPC :: EVENT_EXIT_ROOM_RPC
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UClientService :: CALL_GET_READY_METHOD :: EVENT_CALL_GET_READY_METHOD
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UClientService :: CALL_CANCEL_READY_METHOD :: EVENT_CALL_CANCEL_READY_METHOD
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UClientService :: CALL_PLAY_METHOD :: EVENT_CALL_PLAY_METHOD
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UClientService :: ROOM_IS_NOT_FULL_RPC :: EVENT_ROOM_IS_NOT_FULL_RPC
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UClientService :: ROOM_NOT_ALL_ARE_READY_RPC :: EVENT_ROOM_NOT_ALL_ARE_READY_RPC
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UClientService :: PLAY_RPC :: EVENT_PLAY_RPC
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UClientService :: CALL_SYNC_LOAD_PROGRESS_METHOD :: EVENT_CALL_SYNC_LOAD_PROGRESS_METHOD
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UClientService :: SYNC_LOAD_PROGRESS_RPC :: EVENT_SYNC_LOAD_PROGRESS_RPC
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UClientService :: CALL_LOADING_COMPLETED_METHOD :: EVENT_CALL_LOADING_COMPLETED_METHOD
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> UClientService :: LOADING_COMPLETED_RPC :: EVENT_LOADING_COMPLETED_RPC
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> CreateDelegate --> Game :: ON_GAME_START :: EVENT_ON_GAME_START
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> Enter game
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> SERVER --> accepting a new client 0 ...
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> channel connected !
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> CLIENT :: EVENT_GET_CHANNEL_ID --> Your client id is 0 to server
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> SERVER :: EVENT_RCP_FROM_CLIENT --> rcp from client 0 
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> CLIENT :: clinet 0 ping is 610.4611 ms 
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> SERVER --> accepting a new client 1 ...
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> CLIENT :: clinet 0 ping is 10.9626 ms 
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> SERVER :: EVENT_RCP_FROM_CLIENT --> rcp from client 1 
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> SERVER --> accepting a new client 2 ...
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> CLIENT :: clinet 0 ping is 10.9639 ms 
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> SERVER :: EVENT_RCP_FROM_CLIENT --> rcp from client 2 
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> CLIENT :: EVENT_CALL_CREATE_ROOM_REQUEST_METHOD
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> SERVER :: EVENT_CREATE_ROOM 0 1
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> Player 1 joined room 100000
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> CLIENT :: EVENT_CREATE_ROOM_RPC
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100000
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> SERVER :: EVENT_JOIN_IN from client 1 2
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> Player 2 joined room 100000
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100000
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> SERVER :: EVENT_JOIN_IN from client 2 3
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> Player 3 joined room 100000
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100000
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100000
+ Frame Sync Test | 2024/1/18 15:29:39 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100000
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> channel disconnected !
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> channel disconnected !
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> channel disconnected !
+ Frame Sync Test | 2024/1/18 15:29:39 |  Warn --> channel disconnected !
+ined room 100001
  Frame Sync Test | 2024/1/8 15:00:53 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100001
  Frame Sync Test | 2024/1/8 15:00:53 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100001
  Frame Sync Test | 2024/1/8 15:00:53 |  Log --> CLIENT :: EVENT_UPDATE_ROOM_RPC --> ROOM_ID 100001

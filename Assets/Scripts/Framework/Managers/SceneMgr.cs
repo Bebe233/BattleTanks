@@ -4,8 +4,11 @@ namespace BEBE.Framework.Managers
 {
     public class SceneMgr : IMgr
     {
-        public async void LoadNecessaryAssets()
+        public async void LoadNecessaryAssets(Service.Net.Msg.EventMsg msg)
         {
+            // 1. Load Scene
+            // 2. Load Player
+
             for (int i = 0; i < 10; i++)
             {
                 await new WaitForSeconds(1);

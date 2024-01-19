@@ -56,7 +56,21 @@ namespace BEBE.Framework.Managers
 
         }
 
-        public void ClearStack()
+        public void UnloadTopLayer()
+        {
+            UIView view;
+            if (uiStack.TryPeek(out view))
+            {
+                uiStack.Pop();
+                GameObject.Destroy(view.gameObject);
+            }
+            if (uiStack.TryPeek(out view))
+            {
+                view.SetInteractable(true);
+            }
+        }
+
+        public void UnloadAll()
         {
             UIView view;
             while (uiStack.TryPeek(out view))

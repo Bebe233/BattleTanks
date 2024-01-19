@@ -26,7 +26,7 @@ public class Game : BaseService
 
     public void LoadSceneLevel(int selectionIndex)
     {
-        uiMgr.ClearStack();
+        uiMgr.UnloadAll();
         // selectionIndex 
         switch (selectionIndex)
         {
