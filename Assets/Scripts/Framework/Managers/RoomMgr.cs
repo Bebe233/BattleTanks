@@ -7,6 +7,9 @@ using BEBE.Engine.Logging;
 using BEBE.Framework.Service.Net.Msg;
 using BEBE.Framework.Event;
 using BEBE.Framework.Service.Net;
+using BEBE.Framework.Component;
+using BEBE.Framework.Module;
+
 namespace BEBE.Framework.Managers
 {
     //房间管理类
@@ -26,7 +29,7 @@ namespace BEBE.Framework.Managers
             }
             //随机分配一个room的id
             int id_room = id_gen.Get();
-            Room room = new Room(id_room, 3);
+            Room room = new Room(id_room, Constant.ROOM_CAPICITY);
             id2room[id_room] = room;
             session.IsHost = true;
             session.IsReady = true;
@@ -140,6 +143,14 @@ namespace BEBE.Framework.Managers
                 {
                     room.Broadcast(new EventPacket(new EventMsg(EventCode.LOADING_COMPLETED_RPC)));
                 }
+            }
+        }
+
+        internal void Broadcast(USession uSession, EventMsg msg)
+        {
+            if (id2room.TryGetValue(uSession.RoomId, out Room room))
+            {
+                room.Broadcast(new EventPacket(msg));
             }
         }
     }

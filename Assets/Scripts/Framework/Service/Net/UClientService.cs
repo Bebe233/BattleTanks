@@ -187,12 +187,18 @@ namespace BEBE.Framework.Service.Net
             ui.UnloadCanvasUI<LoadingUIView>();
         }
 
+        protected void EVENT_CALL_PUSH_CMD_METHOD(object param)
+        {
+            m_channel.Send(new EventPacket(new EventMsg(EventCode.PUSH_CMD, (byte[])param, m_channel.Id)));
+        }
+
         private int unpack_room_info(EventMsg msg)
         {
             ByteBuf buffer = new ByteBuf(msg.Content);
             int id_room = buffer.ReadInt();
             ui.LoadCanvasUI<RoomUIView>().SetRoomId(id_room);
             byte capicity = buffer.ReadByte();
+            common_status.Members = capicity;
             byte count_unit = buffer.ReadByte();
             ui.LoadCanvasUI<RoomUIView>().SetPlayers(count_unit, capicity);
             ui.LoadCanvasUI<RoomUIView>().InActiveAllUnits();

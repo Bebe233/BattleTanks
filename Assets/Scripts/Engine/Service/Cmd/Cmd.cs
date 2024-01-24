@@ -4,22 +4,20 @@ namespace BEBE.Engine.Service.Cmd
 {
     public abstract class Cmd : ISerializable
     {
-        public int tick;
         //| frame | cmd1 | cmd2 | cmd3 | cmd4 | cmd5 | cmd6 |
-        public virtual void Deserialize(ByteBuf buffer)
+        public virtual byte[] GetBytes()
         {
-            tick = buffer.ReadInt();
+            ByteBuf buf = new ByteBuf();
+            Serialize(ref buf);
+            return buf.Data;
+        }
+        public virtual void PutBytes(byte[] bytes)
+        {
+            ByteBuf buffer =new ByteBuf(bytes);
+            Deserialize(buffer);
         }
 
-
-        public virtual void Serialize(ref ByteBuf buffer)
-        {
-            buffer.WriteInt(tick);
-        }
-
-        public abstract byte[] GetBytes();
-        public abstract void PutBytes(byte[] bytes);
-      
-
+        public abstract void Serialize(ref ByteBuf buffer);
+        public abstract void Deserialize(ByteBuf buffer);
     }
 }

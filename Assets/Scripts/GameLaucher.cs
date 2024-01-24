@@ -1,5 +1,6 @@
 using BEBE.Framework.Utils;
 using BEBE.Framework.Managers;
+using BEBE.Framework.Module;
 /// <summary>
 /// 游戏入口
 /// </summary>
@@ -28,7 +29,7 @@ public class GameLaucher : SingletonGameobject<GameLaucher>
         new Game().EnterGame();
     }
 
-    private IntervalExecuteHelper intervalExe = new IntervalExecuteHelper(30);
+    private IntervalExecuteHelper intervalExe = new IntervalExecuteHelper(Constant.TARGET_FRAME_RATE);
 
     private void Update()
     {

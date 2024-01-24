@@ -1,9 +1,5 @@
-using BEBE.Engine.Math;
-using BEBE.Engine.Service.Cmd;
-using BEBE.Engine.Service.Net;
-using BEBE.Framework.Component;
 using BEBE.Framework.Service;
-using UnityEngine;
+using BEBE.Game.Inputs;
 
 namespace BEBE.Framework.Managers
 {
@@ -12,21 +8,39 @@ namespace BEBE.Framework.Managers
     {
         private ClientCmdService m_ccmdsvc;
         private ServerCmdService m_scmdsvc;
-        private NetworkService m_client => MgrsContainer.GetMgr<NetMgr>().Client;
-        private NetworkService m_server => MgrsContainer.GetMgr<NetMgr>().Server;
-
+        private bool toggle = false;
         public override void Awake()
         {
-            m_ccmdsvc = new ClientCmdService(m_client);
-            m_scmdsvc = new ServerCmdService(m_server);
+
+            m_ccmdsvc = new ClientCmdService();
+#if UNITY_EDITOR
+            m_scmdsvc = new ServerCmdService();
+#endif
+        }
+
+        public override void Start()
+        {
+            base.Start();
+            toggle = true;
         }
 
         public override void FixedUpdate()
         {
-            m_ccmdsvc.RecordInput();
+            if (toggle)
+                m_ccmdsvc?.RecordInput();
         }
 
-        public PlayerInputs GetPlayerInputs() => m_ccmdsvc.Inputs;
-       
+        public override void OnDestroy()
+        {
+            base.OnDestroy();
+            toggle = false;
+        }
+
+        public TickInputsRollbackableCache InputsRollbackable => m_ccmdsvc.InputsRollbackable;
+        public int TickSync => m_ccmdsvc.TickSync;
+        public void SyncTick(int tick)
+        {
+            m_ccmdsvc.SyncTick(tick);
+        }
     }
 }

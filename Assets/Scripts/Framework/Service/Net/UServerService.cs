@@ -6,6 +6,7 @@ using BEBE.Engine.Logging;
 using System;
 using System.Net.Sockets;
 using BEBE.Framework.Managers;
+using BEBE.Framework.Component;
 
 namespace BEBE.Framework.Service.Net
 {
@@ -120,6 +121,13 @@ namespace BEBE.Framework.Service.Net
             EventMsg msg = (EventMsg)param;
             int channel_id = msg.Id;
             MgrsContainer.GetMgr<RoomMgr>().LoadingCompleted((USession)m_sessions[channel_id]);
+        }
+
+        private void EVENT_CALL_PULL_CMD_METHOD(object param)
+        {
+            EventMsg msg = (EventMsg)param;
+            int channel_id = msg.Id;
+            MgrsContainer.GetMgr<RoomMgr>().Broadcast((USession)m_sessions[channel_id], msg);
         }
     }
 }

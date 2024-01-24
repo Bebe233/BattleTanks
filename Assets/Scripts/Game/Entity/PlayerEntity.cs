@@ -1,61 +1,44 @@
 using BEBE.Engine.Math;
 using BEBE.Framework.ULMath;
 using BEBE.Framework.Component;
-public class PlayerEntity : Entity
+using BEBE.Game.Inputs;
+using BEBE.Framework.Module;
+
+public abstract class PlayerEntity : Entity
 {
-    public float Speed = 0.382f;
+    public float Speed = 3f;
     protected LFloat speed;
-    float last_x_abs, last_y_abs;
 
     protected override void Awake()
     {
         base.Awake();
-        speed = Speed.ToLFloat();
+        speed = (Speed * (1f / Constant.TARGET_FRAME_RATE)).ToLFloat();
     }
-
-    LVector3 last_dir;
+    protected PlayerInput last_input;
     public override void ExecuteCmd(BInput binput)
     {
-        base.ExecuteCmd(binput);
         var pinput = binput as PlayerInput;
+        last_input = pinput;
         LFloat x = pinput.x;
         LFloat y = pinput.y;
-        LFloat x_abs = LMath.Abs(x);
-        LFloat y_abs = LMath.Abs(y);
-        LVector3 dir = last_dir;
-        if (x_abs > y_abs)
+        LVector3 dir = LVector3.zero;
+        if (LMath.Abs(x) > 0)
         {
-            dir = LVector3.right * x;
+            dir = new LVector3(x, 0, 0);
         }
-        else if (x_abs < y_abs)
+        else if (LMath.Abs(y) > 0)
         {
-            dir = LVector3.up * y;
+            dir = new LVector3(0, y, 0);
         }
-        else
-        {
-            //根据上一帧的大小，取从小变大的那个
-            if (last_x_abs < last_y_abs)
-            {
-                dir = LVector3.right * x;
-            }
-            else if (last_x_abs > last_y_abs)
-            {
-                dir = LVector3.up * y;
-            }
-            else
-            {
-                dir = new LVector3(dir.x * x_abs, dir.y * y_abs, 0);
-            }
-        }
-        last_x_abs = x_abs;
-        last_y_abs = y_abs;
-        last_dir = dir;
         targetPos = transform.position.ToLVector3() + dir * speed;
         // transform.rotation = Quaternion.FromToRotation(Vector3.up, dir);
+        base.ExecuteCmd(binput);
     }
 
     public override void RollbackCmd(BInput binput)
     {
-        
+
     }
+
+    public abstract PlayerInput RecordCmd();
 }

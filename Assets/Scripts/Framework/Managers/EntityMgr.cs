@@ -5,7 +5,7 @@ namespace BEBE.Framework.Managers
     public class EntityMgr : IMgr
     {
         protected PlayerEntityService svc_player;
-
+        private bool toggle = false;
         public override void Awake()
         {
             svc_player = new PlayerEntityService();
@@ -13,22 +13,24 @@ namespace BEBE.Framework.Managers
 
         public override void Start()
         {
-           
+            toggle = true;
         }
 
         public override void FixedUpdate()
         {
-            svc_player.DoCmd();
+            if (toggle)
+                svc_player.ExecuteCmd();
         }
 
         public override void OnDestroy()
         {
+            toggle = false;
             svc_player.DestroyAll();
         }
 
-        public void CreatePlayer(byte actorId)
+        public void CreatePlayer<T>(byte actorId) where T : Entity
         {
-            svc_player.CreateEntity(actorId, "roles/player/player_1");
+            svc_player.CreateEntity<T>(actorId, "roles/player/player_1");
         }
 
         public bool TryGetPlayer(byte actorId, out Entity player)

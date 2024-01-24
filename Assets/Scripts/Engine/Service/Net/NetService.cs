@@ -2,10 +2,7 @@ using System.Collections.Concurrent;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
-using BEBE.Framework.Event;
-using BEBE.Engine.Service.Net;
 using BEBE.Engine.Service.Net.Utils;
-using BEBE.Framework.Service.Net;
 using System;
 
 namespace BEBE.Engine.Service.Net
@@ -49,6 +46,7 @@ namespace BEBE.Engine.Service.Net
                 m_channel?.Send(packet);
         }
 
+        
         public override void DoUpdate()
         {
             if (is_connecting)

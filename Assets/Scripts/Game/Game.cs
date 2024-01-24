@@ -45,16 +45,6 @@ public class Game : BaseService
 
     }
 
-    protected void EVENT_ON_GAME_START(object param)
-    {
-        MgrsContainer.AddMgr<FrameMgr>()?.Awake();
-        MgrsContainer.GetMgr<FrameMgr>()?.Start();
-        MgrsContainer.AddMgr<CmdMgr>()?.Awake();
-        MgrsContainer.GetMgr<CmdMgr>()?.Start();
-        MgrsContainer.AddMgr<EntityMgr>()?.Awake();
-        MgrsContainer.GetMgr<EntityMgr>()?.Start();
-    }
-
     protected override void register_events()
     {
         Dispatchor.Register(this, Constant.EVENT_PREFIX);

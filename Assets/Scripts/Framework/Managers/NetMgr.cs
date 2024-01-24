@@ -1,5 +1,6 @@
 using BEBE.Engine.Service.Net;
 using BEBE.Framework.Service.Net;
+using BEBE.Framework.Utils;
 
 namespace BEBE.Framework.Managers
 {
@@ -28,9 +29,9 @@ namespace BEBE.Framework.Managers
             m_Server?.StartListening();
             m_client?.Connect();
         }
-
         public override void Update()
         {
+            base.Update();
             m_Server?.DoUpdate();
             m_client?.DoUpdate();
         }

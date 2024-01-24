@@ -37,6 +37,10 @@ namespace BEBE.Framework.Event
         CALL_LOADING_COMPLETED_METHOD,
         LOADING_COMPLETED,
         LOADING_COMPLETED_RPC,
+        CALL_PUSH_CMD_METHOD,
+        PUSH_CMD,
+        CALL_PULL_CMD_METHOD,
+        PULL_CMD,
         ENUM_COUNT,
     }
 }

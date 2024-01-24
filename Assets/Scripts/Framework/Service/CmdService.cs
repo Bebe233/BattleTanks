@@ -9,165 +9,143 @@ using BEBE.Framework.Service.Net;
 using UnityEngine;
 using BEBE.Framework.Service.Net.Msg;
 using BEBE.Framework.Module;
+using BEBE.Game.Inputs;
 
 namespace BEBE.Framework.Service
 {
     public class ClientCmdService : CmdService
     {
-        private byte actorId; // 范围 1 ~ 10号位
-        public ClientCmdService(NetworkService netService) : base(netService)
+        public int TickSync => tick_sync;
+        public void SyncTick(int tick)
         {
-
+            tick_sync = tick;
         }
-
-        public int tick_sync = -1;//同步的帧数
+        private int tick_sync = -1;//同步的帧数
         private FrameMgr frameMgr => MgrsContainer.GetMgr<FrameMgr>();
-        PlayerInputs m_inputs_send = new PlayerInputs();
-        PlayerInputs m_inputs_local = new PlayerInputs();
-        public PlayerInputs Inputs => m_inputs_local;
-        Queue<PlayerInput> m_inputs_rollback = new Queue<PlayerInput>();
+        private EntityMgr entityMgr => MgrsContainer.GetMgr<EntityMgr>();
+        private CommonStatusMgr commonStatusMgr => MgrsContainer.GetMgr<CommonStatusMgr>();
+        private PlayerInputDataCache m_inputs_push = new PlayerInputDataCache();  // 发送给服务器的
+        public TickInputsRollbackableCache InputsRollbackable => m_inputs_rollbackable;
+        private TickInputsRollbackableCache m_inputs_rollbackable = new TickInputsRollbackableCache(); // 回滚缓存
         //记录输入
         //记录的数量约等于 客户端当前帧数 - 客户端收到服务端同步的帧数
         public void RecordInput()
         {
-            rollback_cmd();
-            //获取移动的指令
-            float x = Input.GetAxisRaw("Horizontal");
-            float y = Input.GetAxisRaw("Vertical");
-            //装载
-            PlayerInput input_tick = new PlayerInput();
-            m_inputs_local.tick = m_inputs_send.tick = input_tick.tick = frameMgr.Tick;
-            input_tick.actorId = actorId;
-            input_tick.x = x.ToLFloat();
-            input_tick.y = y.ToLFloat();
-            m_inputs_local.put(input_tick);
-            if (m_inputs_send.put(input_tick))
-                send_cmd();
-        }
+            TickInputs tick_inputs_local = new TickInputs(frameMgr.Tick, commonStatusMgr.Members);
 
-        private EntityMgr entityMgr => MgrsContainer.GetMgr<EntityMgr>();
-
-        protected void rollback_cmd()
-        {
-            if (entityMgr.TryGetPlayer(0, out Entity p))
+            //获取当前帧的所有输入,存入本地与网络返回的进行比对
+            //获取当前帧你的输入，准备上传给服务器
+            for (byte i = 0; i < commonStatusMgr.Members; i++)
             {
-                var player = ((PlayerEntity)p);
-                // Step.1 ROLLBACK FUNTION TODO
-                for (int i = frameMgr.Tick; i > tick_sync; i--)
+                if (entityMgr.TryGetPlayer(i, out Entity entity))
                 {
-                    if (m_inputs_local.get(i, out PlayerInput input))
+                    if (i == commonStatusMgr.ActorId)
                     {
-                        player.RollbackCmd(input);
-                    }
-                }
-                // Step.2 Execute ensure cmd;
-                while (m_inputs_rollback.Count > 0)
-                {
-                    var input_rollback = m_inputs_rollback.Dequeue();
-                    tick_sync = input_rollback.tick;
-
-                    player.ExecuteCmd(input_rollback);
-
-                }
-            }
-        }
-
-        protected void send_cmd()
-        {
-            m_netservice.Send(new EventPacket(new EventMsg(EventCode.ON_RECV_INPUT, m_inputs_send.GetBytes(), ((ClientService)m_netservice).Id)));
-        }
-
-        private void sync_cmd(PlayerInputs inputs)
-        {
-            foreach (var input in inputs.Inputs.Values)
-            {
-                if (input.tick > tick_sync) //同步
-                {
-                    //server response 与 local 做比较
-                    // 如果比较的一帧的操作相同吗，则不回滚,否则回滚
-                    if (m_inputs_local.get(input.tick, out PlayerInput input_local))
-                    {
-                        // BEBE.Engine.Logging.Debug.Log("m_inputs_local.get tick");
-                        if (input_local.Equals(input))
-                        {
-                            //此帧确认正确
-                            tick_sync = input.tick;
-
-                            if (input_local.executed)
-                            {
-                                m_inputs_local.delete(tick_sync);
-                            }
-                            // BEBE.Engine.Logging.Debug.Log("Ensure tick");
-                        }
-                        else
-                        {
-                            //rollback to server tick 回滚
-                            // BEBE.Engine.Logging.Debug.Log($"rollback tick  {input.ToString()}  {input_local.ToString()}");
-                            m_inputs_rollback.Enqueue(input);
-                        }
+                        You you = entity as You;
+                        var cmd = you.RecordCmd();
+                        tick_inputs_local.Put(cmd);
+                        m_inputs_push.Put(new PlayerInputData(frameMgr.Tick, cmd));
                     }
                     else
                     {
-                        // BEBE.Engine.Logging.Debug.Log("m_inputs_local.get tick fail");
+                        Partner partner = entity as Partner;
+                        tick_inputs_local.Put(partner.RecordCmd());
                     }
                 }
-                else
+            }
+            m_inputs_rollbackable.TryAddRollbackableCmd(tick_inputs_local);
+            push_cmd();
+        }
+
+        // 上传指令
+        public void push_cmd()
+        {
+            Dispatchor.Dispatch(EventCode.CALL_PUSH_CMD_METHOD, m_inputs_push.GetBytes());
+        }
+
+        private TickInputsCache m_inputs_pull = new TickInputsCache();
+        protected void EVENT_PULL_CMD(object param)
+        {
+            EventMsg msg = (EventMsg)param;
+
+            lock (m_inputs_pull)
+            {
+                m_inputs_pull.PutBytes(msg.Content);
+
+                // Debug.Log(m_inputs_pull.ToString());
+                while (m_inputs_pull.TryGet(out TickInputs inputs))
                 {
-                    // BEBE.Engine.Logging.Debug.Log($"input.tick {input.tick}  tick_sync {tick_sync}");
-                    if (m_inputs_local.get(input.tick, out PlayerInput input_local))
+                    if (inputs.Tick < tick_sync) continue;
+                    if (m_inputs_rollbackable.TryGetRollbackableCmd(inputs.Tick, out TickInputs local_inputs))
                     {
-                        if (input_local.executed)
+                        if (!inputs.Equals(local_inputs))
                         {
-                            m_inputs_local.delete(tick_sync);
+                            //add to rollback
+                            m_inputs_rollbackable.PutSyncCmd(inputs);
+                        }
+                        else
+                        {
+                            tick_sync = inputs.Tick;
+                            m_inputs_rollbackable.TryRemoveRollbackableCmd(tick_sync, out TickInputs local);
                         }
                     }
                 }
-                m_inputs_send.delete(input.tick);
             }
-        }
-
-        protected void EVENT_ON_SYNC_CMD(object param)
-        {
-            // BEBE.Engine.Logging.Debug.Log("EVENT_ON_RECV_INPUT");
-            EventMsg msg = (EventMsg)param;
-            int id = msg.Id;
-
-            PlayerInputs p_inputs = new PlayerInputs();
-            p_inputs.PutBytes(msg.Content);
-
-            sync_cmd(p_inputs);
         }
     }
 
     public class ServerCmdService : CmdService
     {
-        public ServerCmdService(NetworkService netService) : base(netService)
+        Dictionary<int, Dictionary<byte, PlayerInput>> dict = new Dictionary<int, Dictionary<byte, PlayerInput>>();
+        TickInputsCache inputs_cache = new TickInputsCache();
+        private void EVENT_PUSH_CMD(object param)
         {
-
-        }
-
-        public void SendCmd(Cmd binput)
-        {
-
-        }
-
-        protected void EVENT_ON_RECV_INPUT(object param)
-        {
-            // BEBE.Engine.Logging.Debug.Log("EVENT_ON_RECV_INPUT");
             EventMsg msg = (EventMsg)param;
-            int id = msg.Id;
+            int channel_id = msg.Id;
 
-            PlayerInputs p_inputs = new PlayerInputs();
-            p_inputs.PutBytes(msg.Content);
+            PlayerInputDataCache cache = new PlayerInputDataCache();
+            cache.PutBytes(msg.Content);
 
-            // BEBE.Engine.Logging.Debug.Log(p_inputs.ToString());
+            while (cache.TryGet(out PlayerInputData data))
+            {
+                int tick = data.Tick;
+                PlayerInput input = data.PlayerInput;
+                if (dict.ContainsKey(tick))
+                {
+                    if (dict[tick] == null)
+                    {
+                        dict[tick] = new Dictionary<byte, PlayerInput>();
+                    }
+                    if (!dict[tick].ContainsKey(input.actorId))
+                    {
+                        dict[tick].Add(input.actorId, input);
+                    }
+                }
+                else
+                {
+                    dict.Add(tick, new Dictionary<byte, PlayerInput>());
+                    dict[tick].Add(input.actorId, input);
+                }
+                if (dict[tick].Count == Constant.ROOM_CAPICITY)
+                {
+                    //将这一帧加入的发送队列
+                    TickInputs inputs = new TickInputs(tick, Constant.ROOM_CAPICITY);
+                    foreach (var element in dict[tick].Values)
+                    {
+                        inputs.Put(element);
+                    }
+                    inputs_cache.Put(inputs);
+                    dict.Remove(tick);
+                }
+            }
 
-            m_netservice.Send(new EventPacket(new EventMsg(EventCode.ON_SYNC_CMD, msg.Content)));
-            //如果收到所有的cmds ,分发给client
-            // m_inputs.put(id, msg.Content);
-            //并清空dict
-
+            //返回客户端
+            if (inputs_cache.Count > 0)
+            {
+                Dispatchor.Dispatch(EventCode.CALL_PULL_CMD_METHOD, new EventMsg(EventCode.PULL_CMD, inputs_cache.GetBytes(), channel_id));
+            }
 
         }
+
     }
 }
