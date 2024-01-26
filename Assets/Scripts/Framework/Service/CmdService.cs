@@ -54,7 +54,7 @@ namespace BEBE.Framework.Service
                 }
             }
             m_inputs_rollbackable.TryAddRollbackableCmd(tick_inputs_local);
-            push_cmd();
+           
         }
 
         // 上传指令

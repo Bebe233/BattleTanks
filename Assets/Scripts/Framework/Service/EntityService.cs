@@ -169,6 +169,15 @@ namespace BEBE.Framework.Service
             }
         }
 
+        public void DoRender()
+        {
+            //step 4. do render
+            foreach (var entity in entities.Values)
+            {
+                entity.DoRender();
+            }
+        }
+
         protected override void register_events()
         {
             Dispatchor.Register(this, Constant.EVENT_PREFIX);

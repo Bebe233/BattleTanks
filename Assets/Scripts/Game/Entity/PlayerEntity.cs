@@ -30,15 +30,10 @@ public abstract class PlayerEntity : Entity
         {
             dir = new LVector3(0, y, 0);
         }
-        targetPos = transform.position.ToLVector3() + dir * speed;
+        targetPos += dir * speed;
         // transform.rotation = Quaternion.FromToRotation(Vector3.up, dir);
-        base.ExecuteCmd(binput);
     }
 
-    public override void RollbackCmd(BInput binput)
-    {
-
-    }
 
     public abstract PlayerInput RecordCmd();
 }

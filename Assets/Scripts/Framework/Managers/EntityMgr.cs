@@ -19,7 +19,15 @@ namespace BEBE.Framework.Managers
         public override void FixedUpdate()
         {
             if (toggle)
+            {
                 svc_player.ExecuteCmd();
+            }
+        }
+
+        public override void Update()
+        {
+            if (toggle)
+                svc_player.DoRender();
         }
 
         public override void OnDestroy()

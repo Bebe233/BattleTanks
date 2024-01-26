@@ -1,6 +1,7 @@
 using BEBE.Framework.Utils;
 using BEBE.Framework.Managers;
 using BEBE.Framework.Module;
+using UnityEngine;
 /// <summary>
 /// 游戏入口
 /// </summary>
@@ -8,6 +9,7 @@ public class GameLaucher : SingletonGameobject<GameLaucher>
 {
     private void Awake()
     {
+        Application.targetFrameRate = 60;
         // 设置Logger
         BEBE.Engine.Logging.Debug.SetLogHandler(BEBE.Engine.Logging.Logger.UnityLogHandler);
         BEBE.Engine.Logging.Debug.prefix = " Frame Sync Test | " + System.DateTime.Now + " | ";

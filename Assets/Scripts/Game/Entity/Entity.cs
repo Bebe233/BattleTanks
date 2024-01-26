@@ -13,15 +13,15 @@ public abstract class Entity : MonoBehaviour
     protected virtual void Awake()
     {
         targetPos = transform.position.ToLVector3();
-        t = 0.618f.ToLFloat();
+        t = 0.382f.ToLFloat();
     }
 
-    public virtual void ExecuteCmd(BInput binput)
+    public abstract void ExecuteCmd(BInput binput);
+
+    public virtual void DoRender()
     {
         translation();
     }
-
-    public abstract void RollbackCmd(BInput binput);
 
     private LFloat t;
     protected void translation()

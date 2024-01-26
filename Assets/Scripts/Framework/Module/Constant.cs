@@ -11,5 +11,6 @@ namespace BEBE.Framework.Module
 
         public static readonly byte ROOM_CAPICITY = 2;
         public static readonly byte TARGET_FRAME_RATE = 30;
+        public static readonly byte LOGIC_FRAME_RATE = 15;
     }
 }

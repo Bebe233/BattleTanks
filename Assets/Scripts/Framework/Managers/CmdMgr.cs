@@ -1,4 +1,6 @@
+using BEBE.Framework.Module;
 using BEBE.Framework.Service;
+using BEBE.Framework.Utils;
 using BEBE.Game.Inputs;
 
 namespace BEBE.Framework.Managers
@@ -22,6 +24,17 @@ namespace BEBE.Framework.Managers
         {
             base.Start();
             toggle = true;
+        }
+
+        private IntervalExecuteHelper intervalExe = new IntervalExecuteHelper(Constant.LOGIC_FRAME_RATE);
+        public override void Update()
+        {
+            intervalExe?.Invoke(invoke);
+        }
+
+        private void invoke()
+        {
+            m_ccmdsvc.push_cmd();
         }
 
         public override void FixedUpdate()
